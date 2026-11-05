@@ -1,0 +1,10 @@
+targets:
+  $default:
+    builders:
+      json_serializable:
+        generate_for:
+          # Only run `json_serializable` on source under `lib/models`.
+          - lib/models/*.dart
+          - lib/models/wrappers/*.dart
+          - lib/models/datahub/*.dart
+          - lib/models/road_event_status/*.dart

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="261mm"
+   height="130mm"
+   viewBox="0 0 261 130"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="arrow_board_blank.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.84096521"
+     inkscape:cx="293.11557"
+     inkscape:cy="320.4651"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="1136"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#2b2b2b;fill-opacity:1;stroke-width:1"
+       id="rect829"
+       width="261"
+       height="130"
+       x="0"
+       y="0.22246897"
+       ry="9.7886353" />
+    <rect
+       style="fill:#1a1a1a;fill-opacity:1;stroke-width:0.935272"
+       id="rect829-8"
+       width="249.67374"
+       height="118.87383"
+       x="5.8465414"
+       y="5.7791677"
+       ry="8.9508657" />
+    <text
+       xml:space="preserve"
+       style="font-size:104.437px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffcc00;stroke-width:1.08788"
+       x="9.2709913"
+       y="103.18143"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         x="9.2709913"
+         y="103.18143"
+         style="font-size:104.437px;fill:#ffcc00;stroke-width:1.08788">DMS</tspan></text>
+  </g>
+</svg>

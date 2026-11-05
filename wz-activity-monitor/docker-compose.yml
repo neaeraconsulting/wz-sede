@@ -1,0 +1,13 @@
+services:
+  datahub_webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: wz_activity_manager:latest
+    restart: unless-stopped
+    ports:
+      - '3000:80'
+    logging:
+      options:
+        max-size: '10m'
+

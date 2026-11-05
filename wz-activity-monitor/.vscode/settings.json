@@ -1,0 +1,22 @@
+{
+  "cSpell.words": [
+    "Datahub",
+    "deinit",
+    "Getx",
+    "latlng",
+    "linestring",
+    "mapbox",
+    "multipoint",
+    "nanos",
+    "Pageable",
+    "pbenum",
+    "Prefs",
+    "timeofday",
+    "wzam",
+    "wzdx"
+  ],
+  "java.configuration.updateBuildConfiguration": "automatic",
+"dart.flutterSdkPath": ".fvm/versions/3.27.1",
+"python-envs.defaultEnvManager": "ms-python.python:system",
+"python-envs.pythonProjects": []
+}

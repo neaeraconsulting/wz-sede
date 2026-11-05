@@ -1,0 +1,3 @@
+[submodule "wz-datahub-schemas"]
+	path = wz-datahub-schemas
+	url = https://bitbucket.org/wyomingdot/wz-datahub-schemas.git
