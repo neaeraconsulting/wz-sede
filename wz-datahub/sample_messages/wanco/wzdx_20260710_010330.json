@@ -1,0 +1,161 @@
+{
+  "source": "Wanco Fleet Manager API",
+  "version": "2021-12-31",
+  "format": "WZDx4.2",
+  "time": "2026-07-10T01:03:30.753Z",
+  "endpoint": "https://api.wancofleet.com/api/2021-12-31/wzdx/devices",
+  "data": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "id": "47C7C5AE-0604-4837-9157-0A0BA9F9DEBC",
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -110.1296945,
+            39.1251665
+          ]
+        },
+        "properties": {
+          "core_details": {
+            "data_source_id": "2021FD47-5630-411A-A7B8-CC34EE2D418F",
+            "device_status": "ok",
+            "has_automatic_location": true,
+            "make": "Wanco",
+            "update_date": "2026-07-10T01:02:21.750Z",
+            "name": "MB-1000",
+            "model": "WTLMB-14",
+            "serial_number": "VIN:0DEV00000Z1000000",
+            "firmware_version": "SW:20170822 - v.7.29",
+            "device_type": "dynamic-message-sign"
+          },
+          "message_multi_string": "[jp3][jl3]DRIVE[nl]SAFELY"
+        }
+      },
+      {
+        "id": "109C17C6-E9CC-47E0-94CE-5B905921E7B1",
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -110.1207792,
+            39.1222229
+          ]
+        },
+        "properties": {
+          "core_details": {
+            "data_source_id": "56D5ACEB-C920-4F49-BC72-3AD7B494A09D",
+            "device_status": "ok",
+            "has_automatic_location": true,
+            "make": "Wanco",
+            "update_date": "2026-07-10T01:01:23.750Z",
+            "name": "MB-1001",
+            "model": "WTLMB-14",
+            "serial_number": "VIN:0DEV00000Z1000001",
+            "firmware_version": "SW:20170822 - v.7.29",
+            "device_type": "dynamic-message-sign"
+          },
+          "message_multi_string": "[jp3][jl3]ROAD[nl]WORK[nl]AHEAD"
+        }
+      },
+      {
+        "id": "B44E6FD2-A5DE-4343-8E37-98ADE3BE7012",
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -110.1261692,
+            39.1287665
+          ]
+        },
+        "properties": {
+          "core_details": {
+            "data_source_id": "2021FD47-5630-411A-A7B8-CC34EE2D418F",
+            "device_status": "ok",
+            "has_automatic_location": true,
+            "make": "Wanco",
+            "update_date": "2026-07-10T01:02:15.750Z",
+            "name": "SLT-1002",
+            "model": "WVSLT-1",
+            "serial_number": "VIN:0DEV00000Z1000002",
+            "firmware_version": "SW:20170822 - v.7.29",
+            "device_type": "hybrid-sign"
+          },
+          "dynamic_message_function": "speed-limit",
+          "dynamic_message_text": "30 MPH"
+        }
+      },
+      {
+        "id": "45965C0D-165B-47EA-9242-72377288193A",
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -110.1241324,
+            39.129369
+          ]
+        },
+        "properties": {
+          "core_details": {
+            "data_source_id": "2021FD47-5630-411A-A7B8-CC34EE2D418F",
+            "device_status": "ok",
+            "has_automatic_location": true,
+            "make": "Wanco",
+            "update_date": "2026-07-10T01:01:47.750Z",
+            "name": "AB-1003",
+            "serial_number": "ESN:4670000003",
+            "firmware_version": "CID:2002/SW:1.23.45",
+            "device_type": "arrow-board",
+            "model": "AB-01"
+          },
+          "is_in_transport_position": false,
+          "pattern": "right-arrow-sequential"
+        }
+      },
+      {
+        "id": "CCC6937C-DCAB-430D-B8D8-5951E678E981",
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -110.1281274,
+            39.1281571
+          ]
+        },
+        "properties": {
+          "core_details": {
+            "data_source_id": "56D5ACEB-C920-4F49-BC72-3AD7B494A09D",
+            "device_status": "ok",
+            "has_automatic_location": true,
+            "make": "Wanco",
+            "update_date": "2026-07-10T01:02:13.750Z",
+            "name": "SR-1004",
+            "serial_number": "ESN:4670000004",
+            "firmware_version": "CID:4002/SW:1.00.45",
+            "device_type": "traffic-sensor",
+            "model": "SR-01"
+          },
+          "collection_interval_start_date": "2026-07-10T00:57:13.750Z",
+          "collection_interval_end_date": "2026-07-10T01:02:13.750Z",
+          "average_speed_kph": 30.4471884196
+        }
+      }
+    ],
+    "feed_info": {
+      "publisher": "Wanco, Inc.",
+      "version": "4.2",
+      "update_date": "2026-07-10T01:03:30.753Z",
+      "data_sources": [
+        {
+          "data_source_id": "2021FD47-5630-411A-A7B8-CC34EE2D418F",
+          "organization_name": "NAMCO"
+        },
+        {
+          "data_source_id": "56D5ACEB-C920-4F49-BC72-3AD7B494A09D",
+          "organization_name": "ACME Holdings, Inc."
+        }
+      ]
+    }
+  }
+}

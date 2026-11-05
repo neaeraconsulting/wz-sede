@@ -1,0 +1,147 @@
+{
+  "source": "Wanco Fleet Manager API",
+  "version": "2021-12-31",
+  "format": "WZDx4.2",
+  "time": "2026-07-10T20:37:32.760Z",
+  "endpoint": "https://api.wancofleet.com/api/2021-12-31/wzdx/devices",
+  "data": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "id": "7D0816E0-2D24-4264-8C96-50CB97911EC6",
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-106.595673, 41.736778]
+        },
+        "properties": {
+          "core_details": {
+            "data_source_id": "29ECC6AA-C30D-47EA-80FB-0A0E6B95F346",
+            "device_status": "ok",
+            "has_automatic_location": true,
+            "make": "Wanco",
+            "update_date": "2026-07-10T20:35:09.000Z",
+            "name": "AB-2070001841",
+            "serial_number": "ESN:2070001841",
+            "firmware_version": "CID:2999/SW:2.05.43",
+            "device_type": "arrow-board",
+            "model": "AB-25-L"
+          },
+          "is_in_transport_position": false,
+          "pattern": "left-chevron-sequential"
+        }
+      },
+      {
+        "id": "2970D44C-5F71-4705-B358-DF80310E11D2",
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-104.441225, 41.156403]
+        },
+        "properties": {
+          "core_details": {
+            "data_source_id": "29ECC6AA-C30D-47EA-80FB-0A0E6B95F346",
+            "device_status": "ok",
+            "has_automatic_location": true,
+            "make": "Wanco",
+            "update_date": "2026-07-10T19:42:31.000Z",
+            "name": "AB-2070001861",
+            "serial_number": "ESN:2070001861",
+            "firmware_version": "CID:2999/SW:2.05.43",
+            "device_type": "arrow-board",
+            "model": "AB-25-L"
+          },
+          "is_in_transport_position": false,
+          "pattern": "right-chevron-sequential"
+        }
+      },
+      {
+        "id": "9C249B60-9765-4C87-B61F-7427E4F39C4A",
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-104.202613, 41.152445]
+        },
+        "properties": {
+          "core_details": {
+            "data_source_id": "29ECC6AA-C30D-47EA-80FB-0A0E6B95F346",
+            "device_status": "ok",
+            "has_automatic_location": true,
+            "make": "Wanco",
+            "update_date": "2026-07-10T20:21:07.000Z",
+            "name": "AB-2070001860",
+            "serial_number": "ESN:2070001860",
+            "firmware_version": "CID:2999/SW:2.05.43",
+            "device_type": "arrow-board",
+            "model": "AB-25-L"
+          },
+          "is_in_transport_position": false,
+          "pattern": "left-chevron-sequential"
+        }
+      },
+      {
+        "id": "0BDED3F3-F7B6-46C7-A66C-B722C1E11D7B",
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-106.747905, 41.736871]
+        },
+        "properties": {
+          "core_details": {
+            "data_source_id": "29ECC6AA-C30D-47EA-80FB-0A0E6B95F346",
+            "device_status": "ok",
+            "has_automatic_location": true,
+            "make": "Wanco",
+            "update_date": "2026-07-10T20:32:45.000Z",
+            "name": "AB-2070000081",
+            "serial_number": "ESN:2070000081",
+            "firmware_version": "CID:2999/SW:2.05.43",
+            "device_type": "arrow-board",
+            "model": "AB-25-L"
+          },
+          "is_in_transport_position": false,
+          "pattern": "right-chevron-sequential"
+        }
+      },
+      {
+        "id": "0890B058-ABB3-46EA-BBDA-FDE4072DA6A4",
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-109.857176, 41.542113]
+        },
+        "properties": {
+          "core_details": {
+            "data_source_id": "00371114-9E33-469C-99F4-DFA27CBB1639",
+            "device_status": "ok",
+            "has_automatic_location": true,
+            "make": "Wanco",
+            "update_date": "2026-07-10T20:37:09.000Z",
+            "name": "AB-2070007932",
+            "serial_number": "ESN:2070007932",
+            "firmware_version": "CID:2999/SW:3.02.02",
+            "device_type": "arrow-board",
+            "model": "AB-25-L-TR"
+          },
+          "is_in_transport_position": false,
+          "pattern": "diamonds-alternating"
+        }
+      }
+    ],
+    "feed_info": {
+      "publisher": "Wanco, Inc.",
+      "version": "4.2",
+      "update_date": "2026-07-10T20:37:32.760Z",
+      "data_sources": [
+        {
+          "data_source_id": "29ECC6AA-C30D-47EA-80FB-0A0E6B95F346",
+          "organization_name": "ZZ-CAB-Traffic Safety Services Inc-Cheyenne"
+        },
+        {
+          "data_source_id": "00371114-9E33-469C-99F4-DFA27CBB1639",
+          "organization_name": "ZZ-CAB-Straight Stripe Painting, Inc"
+        }
+      ]
+    }
+  }
+}

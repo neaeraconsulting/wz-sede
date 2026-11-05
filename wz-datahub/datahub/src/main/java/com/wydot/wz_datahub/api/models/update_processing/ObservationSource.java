@@ -1,0 +1,16 @@
+package com.wydot.wz_datahub.api.models.update_processing;
+
+public enum ObservationSource {
+    WZAM_LIVE_WORKER_LOCATION,
+    WZAM_MOBILE_VEHICLE_LOCATION,
+    WZAM_REPORT,
+    WZAM_RECORDING,
+    WZAM_REPORT_SCHEDULE,
+    WZAM_RECORDING_SCHEDULE,
+    CON_ADMIN,
+    CON_ADMIN_SCHEDULE,
+    ARROW_BOARD,
+    LOCATION_MARKER,
+    WORKER_LOCATION,
+    VEHICLE_LOCATION
+}

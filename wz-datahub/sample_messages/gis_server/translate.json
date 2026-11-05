@@ -1,0 +1,15 @@
+{
+  "locations": [
+    {
+      "routeId": "ML80I",
+      "measure": 319.10999958484041,
+      "translatedLocations": [
+        {
+          "networkLayerId": 5,
+          "routeId": "RMML80I",
+          "measure": 319.2767573381264
+        }
+      ]
+    }
+  ]
+}

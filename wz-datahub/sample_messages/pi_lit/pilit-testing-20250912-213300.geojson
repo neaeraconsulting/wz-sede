@@ -1,0 +1,43 @@
+{
+  "type": "FeatureCollection",
+  "feed_info": {
+    "update_date": "2025-09-12T21:32:23.150Z",
+    "version": "0.0",
+    "publisher": "pi-lit",
+    "data_sources": [
+      {
+        "data_source_id": "",
+        "organization_name": "pi-lit"
+      }
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "position": "start",
+        "marker-color": "#00ff00",
+        "marker-size": "medium",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "coordinates": [-104.82669613670915, 41.17530876110095],
+        "type": "Point"
+      },
+      "id": 8
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "position": "end",
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "coordinates": [-104.8286869246328, 41.1659410786059],
+        "type": "Point"
+      }
+    }
+  ]
+}

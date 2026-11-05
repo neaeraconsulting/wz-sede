@@ -1,0 +1,31 @@
+{
+  "project_id": null,
+  "road_event_id": null,
+  "name": "test_report_2",
+  "types_of_work": [
+    {
+      "type_name": "roadside-work",
+      "is_architectural_change": true
+    },
+    {
+      "type_name": "minor-road-defect-repair",
+      "is_architectural_change": false
+    }
+  ],
+  "workers_present": true,
+  "start_date": 1749189560,
+  "end_date": 1749199560,
+  "timestamp": 1749189560,
+  "speed_limit_mph": 55,
+  "area_type": "static",
+  "geometry_type": "linestring",
+  "geometry": [
+    [-147.83464059242237, 64.83645996022193],
+    [-147.83842467277552, 64.83565544624165],
+    [-147.84149477570352, 64.83447140079986],
+    [-147.8433868158801, 64.8331506732867],
+    [-147.84506466282926, 64.83151105933021],
+    [-147.84695670300584, 64.82996244334657]
+  ],
+  "surface_type": "paved"
+}

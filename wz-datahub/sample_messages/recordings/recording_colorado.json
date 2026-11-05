@@ -1,0 +1,95 @@
+{
+  "project_id": null,
+  "road_event_id": null,
+  "name": "recording_1",
+  "description": "description",
+  "types_of_work": [
+    { "type_name": "below-road-work", "is_architectural_change": true },
+    {
+      "type_name": "minor-road-defect-repair",
+      "is_architectural_change": false
+    }
+  ],
+  "road_name": "I-25",
+  "direction": "northbound",
+  "start_date": 1749322080000,
+  "end_date": 1749494880000,
+  "timestamp": 1749235718753,
+  "area_type": "static",
+  "surface_type": "paved",
+  "points": [
+    {
+      "timestamp": 1749235720519,
+      "num_satellites": 0,
+      "accuracy": 3.7899999618530273,
+      "latitude": 40.024508013979755,
+      "longitude": -104.98059089654097,
+      "altitude": 143.8000030517578,
+      "speed": 0.003406423144042492,
+      "heading": 0.0,
+      "marking": {
+        "ref_pt": true,
+        "lanes": [
+          {
+            "order": 0,
+            "type": "general",
+            "status": "open",
+            "restrictions": []
+          },
+          {
+            "order": 1,
+            "type": "general",
+            "status": "open",
+            "restrictions": []
+          }
+        ],
+        "workers_present": null,
+        "speed_limit_mph": 65
+      }
+    },
+    {
+      "timestamp": 1749235723519,
+      "num_satellites": 0,
+      "accuracy": 3.7899999618530273,
+      "latitude": 40.02851529398083,
+      "longitude": -104.980451079157,
+      "altitude": 143.8000030517578,
+      "speed": 0.0572095587849617,
+      "heading": 0.0,
+      "marking": null
+    },
+    {
+      "timestamp": 1749235735526,
+      "num_satellites": 0,
+      "accuracy": 9.9350004196167,
+      "latitude": 40.04958805716214,
+      "longitude": -104.98034920423441,
+      "altitude": 144.00001525878906,
+      "speed": 0.017708472907543182,
+      "heading": 0.0,
+      "marking": {
+        "ref_pt": null,
+        "lanes": null,
+        "workers_present": null,
+        "speed_limit_mph": 50
+      }
+    },
+    {
+      "timestamp": 1749235738515,
+      "num_satellites": 0,
+      "accuracy": 9.9350004196167,
+      "latitude": 40.05362444134013,
+      "longitude": -104.98030925641038,
+      "altitude": 144.00001525878906,
+      "speed": 0.021170541644096375,
+      "heading": 0.0,
+      "marking": {
+        "ref_pt": null,
+        "lanes": null,
+        "workers_present": true,
+        "speed_limit_mph": null
+      }
+    }
+  ],
+  "user_id": "fe8236a4-24f7-4b9b-8274-4ed33d59954e"
+}

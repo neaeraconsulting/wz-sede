@@ -1,0 +1,409 @@
+{
+  "project_id": null,
+  "road_event_id": null,
+  "name": "Dartmouth Rd",
+  "description": "fake wz",
+  "types_of_work": [
+    { "type_name": "maintenance", "is_architectural_change": false }
+  ],
+  "road_name": "Dartmouth Dr",
+  "direction": "northbound",
+  "start_date": 1754610300000,
+  "end_date": 1754696700000,
+  "timestamp": 1754610358906,
+  "area_type": "static",
+  "surface_type": "paved",
+  "points": [
+    {
+      "timestamp": 1754610363475,
+      "num_satellites": 0,
+      "accuracy": 7.508999824523926,
+      "latitude": 64.8422719,
+      "longitude": -147.8526926,
+      "altitude": 144.10000610351562,
+      "speed": 0.9209702610969543,
+      "heading": 313.0279235839844,
+      "marking": {
+        "ref_pt": true,
+        "lanes": [
+          {
+            "order": 0,
+            "type": "general",
+            "status": "open",
+            "restrictions": []
+          }
+        ],
+        "workers_present": null,
+        "speed_limit_mph": 20
+      }
+    },
+    {
+      "timestamp": 1754610368428,
+      "num_satellites": 0,
+      "accuracy": 7.86899995803833,
+      "latitude": 64.842295,
+      "longitude": -147.8527737,
+      "altitude": 144.10000610351562,
+      "speed": 1.0211838483810425,
+      "heading": 304.9057922363281,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610373234,
+      "num_satellites": 0,
+      "accuracy": 7.940999984741211,
+      "latitude": 64.8423237,
+      "longitude": -147.8529108,
+      "altitude": 143.90000915527344,
+      "speed": 1.1787043809890747,
+      "heading": 304.0244140625,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610377772,
+      "num_satellites": 0,
+      "accuracy": 8.324000358581543,
+      "latitude": 64.84235,
+      "longitude": -147.8530233,
+      "altitude": 143.3000030517578,
+      "speed": 1.231367826461792,
+      "heading": 272.8135986328125,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610382510,
+      "num_satellites": 0,
+      "accuracy": 8.675000190734863,
+      "latitude": 64.8423416,
+      "longitude": -147.8531666,
+      "altitude": 144.10000610351562,
+      "speed": 1.2519980669021606,
+      "heading": 293.77386474609375,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610387337,
+      "num_satellites": 0,
+      "accuracy": 8.586000442504883,
+      "latitude": 64.8423894,
+      "longitude": -147.8532846,
+      "altitude": 143.40000915527344,
+      "speed": 1.2862499952316284,
+      "heading": 308.6455078125,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610392060,
+      "num_satellites": 0,
+      "accuracy": 8.807999610900879,
+      "latitude": 64.8424267,
+      "longitude": -147.8534308,
+      "altitude": 143.10000610351562,
+      "speed": 1.2807821035385132,
+      "heading": 304.1841735839844,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610397460,
+      "num_satellites": 0,
+      "accuracy": 8.604999542236328,
+      "latitude": 64.8424667,
+      "longitude": -147.8535384,
+      "altitude": 143.10000610351562,
+      "speed": 1.1619583368301392,
+      "heading": 306.62506103515625,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610402818,
+      "num_satellites": 0,
+      "accuracy": 8.659000396728516,
+      "latitude": 64.8424967,
+      "longitude": -147.853708,
+      "altitude": 143.40000915527344,
+      "speed": 1.176279067993164,
+      "heading": 308.6463928222656,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610407771,
+      "num_satellites": 0,
+      "accuracy": 6.7210001945495605,
+      "latitude": 64.8425477,
+      "longitude": -147.8539226,
+      "altitude": 143.90000915527344,
+      "speed": 1.221590518951416,
+      "heading": 301.59716796875,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610412355,
+      "num_satellites": 0,
+      "accuracy": 6.834000110626221,
+      "latitude": 64.8425832,
+      "longitude": -147.8540892,
+      "altitude": 143.40000915527344,
+      "speed": 1.2554411888122559,
+      "heading": 290.9576721191406,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610417213,
+      "num_satellites": 0,
+      "accuracy": 6.974999904632568,
+      "latitude": 64.8426061,
+      "longitude": -147.8542381,
+      "altitude": 143.40000915527344,
+      "speed": 1.3034415245056152,
+      "heading": 286.3265075683594,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610422794,
+      "num_satellites": 0,
+      "accuracy": 7.190999984741211,
+      "latitude": 64.8426357,
+      "longitude": -147.8544124,
+      "altitude": 143.40000915527344,
+      "speed": 1.3017491102218628,
+      "heading": 294.5776672363281,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610427539,
+      "num_satellites": 0,
+      "accuracy": 5.749000072479248,
+      "latitude": 64.842667,
+      "longitude": -147.8545798,
+      "altitude": 143.40000915527344,
+      "speed": 1.1910693645477295,
+      "heading": 296.1274108886719,
+      "marking": {
+        "ref_pt": null,
+        "lanes": null,
+        "workers_present": true,
+        "speed_limit_mph": null
+      }
+    },
+    {
+      "timestamp": 1754610432314,
+      "num_satellites": 0,
+      "accuracy": 5.388999938964844,
+      "latitude": 64.8426874,
+      "longitude": -147.8547378,
+      "altitude": 143.40000915527344,
+      "speed": 1.2790641784667969,
+      "heading": 285.8367004394531,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610437080,
+      "num_satellites": 0,
+      "accuracy": 4.998000144958496,
+      "latitude": 64.8426792,
+      "longitude": -147.8549244,
+      "altitude": 143.40000915527344,
+      "speed": 1.3310775756835938,
+      "heading": 259.4612121582031,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610441663,
+      "num_satellites": 0,
+      "accuracy": 5.945000171661377,
+      "latitude": 64.8426887,
+      "longitude": -147.8550862,
+      "altitude": 143.70001220703125,
+      "speed": 1.2572822570800781,
+      "heading": 234.99642944335938,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610446378,
+      "num_satellites": 0,
+      "accuracy": 6.370999813079834,
+      "latitude": 64.8426714,
+      "longitude": -147.8551811,
+      "altitude": 143.60000610351562,
+      "speed": 1.1408554315567017,
+      "heading": 215.13462829589844,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610451259,
+      "num_satellites": 0,
+      "accuracy": 6.043000221252441,
+      "latitude": 64.8426621,
+      "longitude": -147.8553369,
+      "altitude": 143.40000915527344,
+      "speed": 1.0913547277450562,
+      "heading": 235.20654296875,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610455896,
+      "num_satellites": 0,
+      "accuracy": 5.301000118255615,
+      "latitude": 64.8426593,
+      "longitude": -147.8554538,
+      "altitude": 143.40000915527344,
+      "speed": 1.0118087530136108,
+      "heading": 224.94505310058594,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610460652,
+      "num_satellites": 0,
+      "accuracy": 6.241000175476074,
+      "latitude": 64.842722,
+      "longitude": -147.8555343,
+      "altitude": 143.40000915527344,
+      "speed": 1.4803019762039185,
+      "heading": 131.8582305908203,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610465536,
+      "num_satellites": 0,
+      "accuracy": 8.322999954223633,
+      "latitude": 64.8429119,
+      "longitude": -147.8557345,
+      "altitude": 143.90000915527344,
+      "speed": 1.1749235391616821,
+      "heading": 321.083251953125,
+      "marking": {
+        "ref_pt": null,
+        "lanes": null,
+        "workers_present": false,
+        "speed_limit_mph": null
+      }
+    },
+    {
+      "timestamp": 1754610470295,
+      "num_satellites": 0,
+      "accuracy": 10.196000099182129,
+      "latitude": 64.8429704,
+      "longitude": -147.8558134,
+      "altitude": 143.90000915527344,
+      "speed": 1.1859638690948486,
+      "heading": 340.7095947265625,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610475277,
+      "num_satellites": 0,
+      "accuracy": 8.496000289916992,
+      "latitude": 64.8430265,
+      "longitude": -147.8559087,
+      "altitude": 143.70001220703125,
+      "speed": 1.140177607536316,
+      "heading": 333.1906433105469,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610480156,
+      "num_satellites": 0,
+      "accuracy": 7.728000164031982,
+      "latitude": 64.8430891,
+      "longitude": -147.8560305,
+      "altitude": 143.60000610351562,
+      "speed": 1.2360053062438965,
+      "heading": 333.5198669433594,
+      "marking": {
+        "ref_pt": null,
+        "lanes": null,
+        "workers_present": null,
+        "speed_limit_mph": 15
+      }
+    },
+    {
+      "timestamp": 1754610485394,
+      "num_satellites": 0,
+      "accuracy": 8.020000457763672,
+      "latitude": 64.8431553,
+      "longitude": -147.8560901,
+      "altitude": 143.60000610351562,
+      "speed": 1.2064478397369385,
+      "heading": 334.6913757324219,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610490179,
+      "num_satellites": 0,
+      "accuracy": 7.546000003814697,
+      "latitude": 64.8431857,
+      "longitude": -147.856221,
+      "altitude": 143.70001220703125,
+      "speed": 1.2541782855987549,
+      "heading": 338.2740478515625,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610494733,
+      "num_satellites": 0,
+      "accuracy": 7.704999923706055,
+      "latitude": 64.8432439,
+      "longitude": -147.856288,
+      "altitude": 143.60000610351562,
+      "speed": 1.2957638502120972,
+      "heading": 330.1785583496094,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610499426,
+      "num_satellites": 0,
+      "accuracy": 7.841000080108643,
+      "latitude": 64.8433069,
+      "longitude": -147.8563471,
+      "altitude": 143.60000610351562,
+      "speed": 1.3421518802642822,
+      "heading": 91.67247009277344,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610504237,
+      "num_satellites": 0,
+      "accuracy": 8.029000282287598,
+      "latitude": 64.8433381,
+      "longitude": -147.856393,
+      "altitude": 143.60000610351562,
+      "speed": 1.1598615646362305,
+      "heading": 312.01409912109375,
+      "marking": {
+        "ref_pt": null,
+        "lanes": null,
+        "workers_present": null,
+        "speed_limit_mph": 20
+      }
+    },
+    {
+      "timestamp": 1754610509547,
+      "num_satellites": 0,
+      "accuracy": 7.9120001792907715,
+      "latitude": 64.8433989,
+      "longitude": -147.8565582,
+      "altitude": 143.60000610351562,
+      "speed": 1.157422661781311,
+      "heading": 322.6268310546875,
+      "marking": null
+    },
+    {
+      "timestamp": 1754610514406,
+      "num_satellites": 0,
+      "accuracy": 7.109000205993652,
+      "latitude": 64.8434663,
+      "longitude": -147.856716,
+      "altitude": 143.60000610351562,
+      "speed": 1.2553156614303589,
+      "heading": 286.4517822265625,
+      "marking": {
+        "ref_pt": false,
+        "lanes": null,
+        "workers_present": null,
+        "speed_limit_mph": null
+      }
+    }
+  ],
+  "user_id": "fe8236a4-24f7-4b9b-8274-4ed33d59954e",
+  "active_schedule": null
+}

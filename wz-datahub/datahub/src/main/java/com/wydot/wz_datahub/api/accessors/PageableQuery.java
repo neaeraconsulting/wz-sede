@@ -1,0 +1,174 @@
+package com.wydot.wz_datahub.api.accessors;
+
+import org.bson.Document;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.mongodb.core.FindAndModifyOptions;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.aggregation.*;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
+import org.springframework.lang.NonNull;
+import org.springframework.lang.Nullable;
+
+import com.wydot.wz_datahub.api.models.accessors.AggregationResult;
+import com.wydot.wz_datahub.api.models.accessors.Counter;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public interface PageableQuery {
+
+    Logger logger = LoggerFactory.getLogger(PageableQuery.class);
+
+    /**
+     * Find paginated data based on the given criteria and pageable object
+     *
+     * @param <T>            the type of the entity to return
+     * @param mongoTemplate  the mongo template object to query with
+     * @param collectionName the collection name to query
+     * @param pageable       the pageable object to use for pagination
+     * @param criteria       the criteria object to use for querying
+     * @param sort           the sort object to use for sorting
+     * @param outputType     the class type of the output
+     * @return the paginated data that matches the given criteria
+     */
+    default <T> Page<T> findPage(
+            @NonNull MongoTemplate mongoTemplate,
+            @NonNull String collectionName,
+            @NonNull Pageable pageable,
+            @NonNull Criteria criteria,
+            @NonNull Sort sort,
+            @Nullable List<String> excludedFields,
+            @NonNull Class<T> outputType) {
+        List<String> fieldsToExclude = excludedFields != null ? excludedFields : Collections.emptyList();
+
+        AggregationResult aggregationResult = getAggregationResult(mongoTemplate, collectionName, pageable, criteria,
+                sort, fieldsToExclude);
+        if (aggregationResult == null || aggregationResult.getMetadata().isEmpty()) {
+            return new PageImpl<>(Collections.emptyList(), pageable, 0);
+        }
+
+        List<T> results = aggregationResult.getResults().stream().map(doc -> {
+            T convertedResult = mongoTemplate.getConverter().read(outputType, doc);
+            if (convertedResult != null) {
+                return convertedResult;
+            } else {
+                logger.error("Failed to convert document to type {}: {}", outputType.getName(), doc);
+                return null;
+            }
+        }).filter(result -> result != null).toList();
+
+        return new PageImpl<>(results, pageable, aggregationResult.getMetadata().getFirst().getCount());
+    }
+
+    /**
+     * Find paginated data based on the given criteria and pageable object
+     *
+     * @param mongoTemplate  the mongo template object to query with
+     * @param collectionName the collection name to query
+     * @param pageable       the pageable object to use for pagination
+     * @param criteria       the criteria object to use for querying
+     * @param sort           the sort object to use for sorting
+     * @return the paginated data that matches the given criteria
+     */
+    default Page<Document> findDocumentsWithPagination(
+            @NonNull MongoTemplate mongoTemplate,
+            @NonNull String collectionName,
+            @NonNull Pageable pageable,
+            @NonNull Criteria criteria,
+            @NonNull Sort sort,
+            @Nullable List<String> excludedFields) {
+        List<String> fieldsToExclude = excludedFields != null ? excludedFields : Collections.emptyList();
+
+        AggregationResult result = getAggregationResult(mongoTemplate, collectionName, pageable, criteria, sort,
+                fieldsToExclude);
+        if (result == null || result.getMetadata().isEmpty()) {
+            return new PageImpl<>(Collections.emptyList(), pageable, 0);
+        }
+
+        List<Document> data = result.getResults();
+        long totalElements = result.getMetadata().getFirst().getCount();
+
+        return new PageImpl<>(data, pageable, totalElements);
+    }
+
+    /**
+     * Wrap the given object in a page object. Intended to be used when applying a
+     * limit of 1 to a query, while attempting to return a Paged response
+     *
+     * @param <T>    the type of the object to wrap
+     * @param latest the object to wrap
+     * @return a page object containing the given object
+     */
+    default <T> Page<T> wrapSingleResultWithPage(T latest) {
+        List<T> resultList = new ArrayList<>();
+        if (latest != null) {
+            resultList.add(latest);
+        }
+        return new PageImpl<>(resultList);
+    }
+
+    private static AggregationResult getAggregationResult(@NonNull MongoTemplate mongoTemplate,
+            @NonNull String collectionName,
+            @NonNull Pageable pageable,
+            @NonNull Criteria criteria,
+            @NonNull Sort sort,
+            @NonNull List<String> excludedFields) {
+
+        MatchOperation matchOperation = Aggregation.match(criteria);
+        SortOperation sortOperation = Aggregation.sort(sort);
+
+        // Create a facet operation that gets both results and count in one query
+        AggregationOperation facetOperation = context -> new Document("$facet",
+                new Document("metadata", List.of(new Document("$count", "count")))
+                        .append("results",
+                                Arrays.asList(
+                                        new Document("$skip", pageable.getPageNumber() * pageable.getPageSize()),
+                                        new Document("$limit", pageable.getPageSize()))));
+
+        // Add project operation if we need to exclude fields
+        Aggregation aggregation;
+        if (!excludedFields.isEmpty()) {
+            AggregationOperation projectOperation = context -> {
+                Document projectFields = new Document();
+                for (String field : excludedFields) {
+                    projectFields.append(field, 0); // Exclude the field by setting it to 0
+                }
+                return new Document("$project", projectFields);
+            };
+            aggregation = Aggregation.newAggregation(
+                    matchOperation,
+                    sortOperation,
+                    projectOperation,
+                    facetOperation);
+        } else {
+            aggregation = Aggregation.newAggregation(
+                    matchOperation,
+                    sortOperation,
+                    facetOperation);
+        }
+
+        // Execute the aggregation
+        AggregationResults<AggregationResult> results = mongoTemplate
+                .aggregate(aggregation, collectionName, AggregationResult.class);
+
+        return results.getUniqueMappedResult();
+    }
+
+    // Service method to generate a unique ID
+    default Long generateUniqueIdFromCounter(MongoTemplate mongoTemplate, String counterName) {
+        Query query = new Query(Criteria.where("_id").is(counterName));
+        Update update = new Update().inc("seq", 1);
+        FindAndModifyOptions options = FindAndModifyOptions.options().returnNew(true).upsert(true);
+        Counter counter = mongoTemplate.findAndModify(query, update, options, Counter.class);
+        return counter != null ? counter.getSeq() : 1L;
+    }
+}

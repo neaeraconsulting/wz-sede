@@ -1,0 +1,49 @@
+{
+  "source": "Wanco Fleet Manager API",
+  "version": "2021-12-31",
+  "format": "WZDx4.2",
+  "time": "2026-07-10T01:04:14.753Z",
+  "endpoint": "https://api.wancofleet.com/api/2021-12-31/wzdx/devices",
+  "data": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "id": "08717203-A91E-4BD9-9200-C55497DA9B24",
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -110.1296314,
+            39.121664
+          ]
+        },
+        "properties": {
+          "core_details": {
+            "data_source_id": "5D80BBBF-0F20-4158-8594-DA02CE79281A",
+            "device_status": "ok",
+            "has_automatic_location": true,
+            "make": "Wanco",
+            "update_date": "2026-07-10T01:02:31.752Z",
+            "name": "MB-1000",
+            "model": "WTLMB-14",
+            "serial_number": "VIN:0DEV00000Z1000000",
+            "firmware_version": "SW:20170822 - v.7.29",
+            "device_type": "dynamic-message-sign"
+          },
+          "message_multi_string": "[jp3][jl3]CAUTION[nl]SLOW[nl]AHEAD"
+        }
+      }
+    ],
+    "feed_info": {
+      "publisher": "Wanco, Inc.",
+      "version": "4.2",
+      "update_date": "2026-07-10T01:04:14.753Z",
+      "data_sources": [
+        {
+          "data_source_id": "5D80BBBF-0F20-4158-8594-DA02CE79281A",
+          "organization_name": "ACME Holdings, Inc."
+        }
+      ]
+    }
+  }
+}

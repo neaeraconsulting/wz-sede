@@ -1,0 +1,146 @@
+{
+  "feed_info": {
+    "publisher": "Ver-Mac inc.",
+    "version": "4.2",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "data_sources": [
+      {
+        "data_source_id": "84fe2b51-92b1-4305-8e48-5865c535233a",
+        "organization_name": "Ver-Mac inc.",
+        "update_date": "2025-09-12T17:29:15Z"
+      }
+    ],
+    "update_date": "2025-09-12T17:32:40Z",
+    "update_frequency": 1,
+    "contact_name": "Ver-Mac Support",
+    "contact_email": "support@ver-mac.com"
+  },
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "81a39462-f7d1-445e-9311-469bb8953aa5",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "device_type": "location-marker",
+          "data_source_id": "84fe2b51-92b1-4305-8e48-5865c535233a",
+          "road_direction": "westbound",
+          "road_names": ["Storey Blvd"],
+          "device_status": "ok",
+          "update_date": "2025-09-12T17:29:15Z",
+          "has_automatic_location": true,
+          "name": "OF1215635_4",
+          "status_messages": ["OK"],
+          "make": "Signalisation VER-MAC Inc.",
+          "model": "WorkzoneMarker",
+          "serial_number": "357273224114126",
+          "firmware_version": "3.02"
+        },
+        "marked_locations": [
+          {
+            "type": "work-zone-start"
+          }
+        ],
+        "marker-color": "#77ff77",
+        "marker-size": "medium",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.826971, 41.175196]
+      }
+    },
+    {
+      "id": "8d6351f4-50c4-4ff6-a4eb-a1c8f962ae13",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "device_type": "location-marker",
+          "data_source_id": "84fe2b51-92b1-4305-8e48-5865c535233a",
+          "road_direction": "southbound",
+          "road_names": ["to I-25 S"],
+          "device_status": "warning",
+          "update_date": "2025-09-12T17:23:54Z",
+          "has_automatic_location": true,
+          "name": "OF1215635_5",
+          "status_messages": ["GPS error"],
+          "make": "Signalisation VER-MAC Inc.",
+          "model": "WorkzoneMarker",
+          "serial_number": "357273224097255",
+          "firmware_version": "3.02"
+        },
+        "marked_locations": [
+          {
+            "type": "work-zone-start"
+          }
+        ],
+        "marker-color": "#00ff00",
+        "marker-size": "medium",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.83871459960938, 41.18266677856445]
+      }
+    },
+    {
+      "id": "cea0211c-105a-400e-8e1e-aab5a5dd9ee3",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "device_type": "location-marker",
+          "data_source_id": "84fe2b51-92b1-4305-8e48-5865c535233a",
+          "road_direction": "northbound",
+          "road_names": ["Storey Blvd"],
+          "device_status": "ok",
+          "update_date": "2025-09-12T17:24:15Z",
+          "has_automatic_location": true,
+          "name": "OF1215636_3",
+          "status_messages": ["OK"],
+          "make": "Signalisation VER-MAC Inc.",
+          "model": "WorkzoneMarker",
+          "serial_number": "357273224107252",
+          "firmware_version": "3.02"
+        },
+        "marked_locations": [
+          {
+            "type": "work-zone-end"
+          }
+        ],
+        "marker-color": "#ff6666",
+        "marker-size": "medium",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.82703399658203, 41.175323486328125]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "coordinates": [-104.8269553785599, 41.175196494484],
+        "type": "Point"
+      },
+      "id": 5
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "coordinates": [-104.82695858690812, 41.17548628468785],
+        "type": "Point"
+      },
+      "id": 5
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+include:
+  - ./jpo-utils/docker-compose-connect.yml
+  - ./jpo-utils/docker-compose-kafka.yml
+  - ./jpo-utils/docker-compose-mongo.yml
+  - ./jpo-utils/docker-compose-monitoring.yml
+
+services:
+  wzam_keycloak:
+    profiles:
+      - wzam_keycloak
+      - local
+      - all
+    image: wzam_keycloak:latest
+    build:
+      context: ./resources/keycloak
+    restart: always
+    ports:
+      - "8084:8080"
+    environment:
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN:-admin}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:-admin}
+      KC_BOOTSTRAP_ADMIN_USERNAME: ${KEYCLOAK_ADMIN:-admin}
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:-admin}
+      KC_HEALTH_ENABLED: 'true'
+      KC_LOG_LEVEL: ${KC_LOG_LEVEL:-INFO}
+      KC_HOSTNAME: ${KEYCLOAK_ENDPOINT:-http://${DOCKER_HOST_IP:?error}:8084}
+      MOBILE_API_CLIENT_SECRET: ${KEYCLOAK_API_CLIENT_SECRET_KEY}
+    command:
+      - start-dev
+      - --import-realm
+    logging:
+      options:
+        max-size: "10m"
+    volumes:
+      - keycloak:/opt/keycloak/data/
+
+  wzam_nginx:
+    profiles:
+      - wzam_nginx
+      - local
+      - deployment
+      - all
+    build:
+      context: resources/nginx
+    image: wzam_nginx:latest
+    restart: unless-stopped
+    ports:
+      - 8443:443
+    # debug mode - uncomment the following line:
+    # command: ["nginx-debug", "-g", "daemon off;"]
+    environment:
+      NGINX_ENVSUBST_OUTPUT_DIR: /etc/nginx
+      SERVER_HOST: ${WZAM_SERVER_HOST}
+      KEYCLOAK_ENDPOINT: ${NGINX_KC_ENDPOINT}
+      DATAHUB_BASE_API_PATH: ${DATAHUB_BASE_API_PATH:-/datahub}
+      MESSAGE_GENERATOR_BASE_API_PATH: ${MESSAGE_GENERATOR_BASE_API_PATH:-/message-generator}
+      WZAM_BASE_API_PATH: ${WZAM_BASE_API_PATH:-/wzam}
+    volumes:
+      - ./resources/nginx/nginx-${NGINX_ENCRYPTION}.conf:/etc/nginx/templates/nginx.conf.template
+      - ./resources/nginx/gen_dhparam.sh:/docker-entrypoint.d/gen_dhparam.sh
+      - ./resources/nginx/ssl/${SERVER_CERT_FILE}:/etc/ssl/certs/nginx_server.crt
+      - ./resources/nginx/ssl/${SERVER_KEY_FILE}:/etc/ssl/private/nginx_server.key
+      - ./resources/nginx/ssl/${CA_CERT_FILE}:/etc/nginx/client_certs/ca.crt
+    #    depends_on:
+    #      - wzam_api
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  datahub:
+    profiles:
+      - datahub
+      - deployment
+      - all
+    build:
+      context: ./datahub
+    image: datahub:latest
+    restart: always
+    ports:
+      - "8081:8081"
+    environment:
+      KEYCLOAK_REALM: ${KEYCLOAK_REALM}
+      KEYCLOAK_CLIENT_NAME: ${KEYCLOAK_API_CLIENT_ID}
+      KEYCLOAK_CLIENT_SECRET: ${KEYCLOAK_API_CLIENT_SECRET_KEY}
+      KEYCLOAK_ENDPOINT: ${KEYCLOAK_ENDPOINT}
+      KEYCLOAK_ADMIN_REGISTRATION_EMAILS: ${KEYCLOAK_ADMIN_REGISTRATION_EMAILS:-jfrye@neaeraconsulting.com}
+
+      BASE_API_PATH: ${DATAHUB_BASE_API_PATH}
+
+      GIS_SERVER_COLORADO_ENDPOINT: ${GIS_SERVER_COLORADO_ENDPOINT}
+
+      DB_HOST_IP: ${MONGO_HOST_IP}
+      MONGO_API_USERNAME: ${MONGO_API_USERNAME}
+      MONGO_API_PASSWORD: ${MONGO_API_PASSWORD}
+      MONGO_AUTH_DB: ${MONGO_AUTH_DB}
+      MONGO_DB_NAME: ${MONGO_DB_NAME}
+
+      KAFKA_BROKER_IP: ${KAFKA_BROKER_IP}
+      KAFKA_BROKER_PORT: ${KAFKA_BROKER_PORT}
+
+      ICONE_INGEST_ENABLED: ${ICONE_INGEST_ENABLED}
+      ICONE_INGEST_URL: ${ICONE_INGEST_URL}
+      ICONE_INGEST_API_KEY: ${ICONE_INGEST_API_KEY}
+      ICONE_INGEST_PERIOD: ${ICONE_INGEST_PERIOD}
+      ICONE_INGEST_MAX_AGE: ${ICONE_INGEST_MAX_AGE}
+      ICONE_INGEST_UPDATES_ENABLED: ${ICONE_INGEST_UPDATES_ENABLED}
+
+      VER_MAC_INGEST_ENABLED: ${VER_MAC_INGEST_ENABLED}
+      VER_MAC_INGEST_URL: ${VER_MAC_INGEST_URL}
+      VER_MAC_INGEST_API_KEY: ${VER_MAC_INGEST_API_KEY}
+      VER_MAC_INGEST_PERIOD: ${VER_MAC_INGEST_PERIOD}
+      VER_MAC_INGEST_MAX_AGE: ${VER_MAC_INGEST_MAX_AGE}
+      VER_MAC_INGEST_UPDATES_ENABLED: ${VER_MAC_INGEST_UPDATES_ENABLED}
+
+      WANCO_INGEST_ENABLED: ${WANCO_INGEST_ENABLED}
+      WANCO_INGEST_SABP_ENABLED: ${WANCO_INGEST_SABP_ENABLED}
+      WANCO_INGEST_URL: ${WANCO_INGEST_URL}
+      WANCO_INGEST_TOKEN_LIFESPAN: ${WANCO_INGEST_TOKEN_LIFESPAN}
+      WANCO_INGEST_API_KEY: ${WANCO_INGEST_API_KEY}
+      WANCO_INGEST_PERIOD: ${WANCO_INGEST_PERIOD}
+      WANCO_INGEST_MAX_AGE: ${WANCO_INGEST_MAX_AGE}
+      WANCO_INGEST_UPDATES_ENABLED: ${WANCO_INGEST_UPDATES_ENABLED}
+
+      PI_LIT_INGEST_ENABLED: ${PI_LIT_INGEST_ENABLED}
+      PI_LIT_INGEST_URL: ${PI_LIT_INGEST_URL}
+      PI_LIT_INGEST_TOKEN_LIFESPAN: ${PI_LIT_INGEST_TOKEN_LIFESPAN}
+      PI_LIT_INGEST_USERNAME: ${PI_LIT_INGEST_USERNAME}
+      PI_LIT_INGEST_PASSWORD: ${PI_LIT_INGEST_PASSWORD}
+      PI_LIT_INGEST_PERIOD: ${PI_LIT_INGEST_PERIOD}
+      PI_LIT_INGEST_MAX_AGE: ${PI_LIT_INGEST_MAX_AGE}
+      PI_LIT_INGEST_UPDATES_ENABLED: ${PI_LIT_INGEST_UPDATES_ENABLED}
+
+      WORKER_LOCATION_UPDATES_ENABLED: ${WORKER_LOCATION_UPDATES_ENABLED}
+      VEHICLE_LOCATION_UPDATES_ENABLED: ${VEHICLE_LOCATION_UPDATES_ENABLED}
+
+      WZAM_WORKER_INGEST_MONITOR_ENABLED: ${WZAM_WORKER_INGEST_MONITOR_ENABLED}
+      WZAM_WORKER_INGEST_MONITOR_EVAL_PERIOD: ${WZAM_WORKER_INGEST_MONITOR_EVAL_PERIOD}
+      WZAM_WORKER_INGEST_MAX_AGE: ${WZAM_WORKER_INGEST_MAX_AGE}
+
+      WZAM_VEHICLE_INGEST_MONITOR_ENABLED: ${WZAM_VEHICLE_INGEST_MONITOR_ENABLED}
+      WZAM_VEHICLE_INGEST_MONITOR_EVAL_PERIOD: ${WZAM_VEHICLE_INGEST_MONITOR_EVAL_PERIOD}
+      WZAM_VEHICLE_INGEST_MAX_AGE: ${WZAM_VEHICLE_INGEST_MAX_AGE}
+
+      GIS_SERVER_ENDPOINT: ${GIS_SERVER_ENDPOINT}
+
+      SLACK_SUPPORT_NOTIFICATION_ENABLED: ${SLACK_SUPPORT_NOTIFICATION_ENABLED}
+      SLACK_SUPPORT_NOTIFICATION_WEBHOOK_URL: ${SLACK_SUPPORT_NOTIFICATION_WEBHOOK_URL}
+      SLACK_USER_REGISTRATION_NOTIFICATION_ENABLED: ${SLACK_USER_REGISTRATION_NOTIFICATION_ENABLED}
+      SLACK_USER_REGISTRATION_NOTIFICATION_WEBHOOK_URL: ${SLACK_USER_REGISTRATION_NOTIFICATION_WEBHOOK_URL}
+      SLACK_REPORT_NOTIFICATION_ENABLED: ${SLACK_REPORT_NOTIFICATION_ENABLED}
+      SLACK_REPORT_NOTIFICATION_WEBHOOK_URL: ${SLACK_REPORT_NOTIFICATION_WEBHOOK_URL}
+      SLACK_MOBILE_SESSION_NOTIFICATION_ENABLED: ${SLACK_MOBILE_SESSION_NOTIFICATION_ENABLED}
+      SLACK_MOBILE_SESSION_NOTIFICATION_WEBHOOK_URL: ${SLACK_MOBILE_SESSION_NOTIFICATION_WEBHOOK_URL}
+
+      APP_MINIMUM_VERSION: ${APP_MINIMUM_VERSION}
+      APP_LATEST_VERSION: ${APP_LATEST_VERSION}
+
+      MAIL_HOST: ${MAIL_HOST}
+      MAIL_PORT: ${MAIL_PORT}
+      MAIL_FROM_ADDRESS: ${EMAIL_FROM_ADDRESS}
+    logging:
+      options:
+        max-size: "10m"
+
+  smtp4dev:
+    profiles:
+      - smtp4dev
+    image: rnwood/smtp4dev:v3
+    restart: always
+    ports:
+      - "5000:80" # Web UI
+      - "25:25" # SMTP
+
+volumes:
+  keycloak:

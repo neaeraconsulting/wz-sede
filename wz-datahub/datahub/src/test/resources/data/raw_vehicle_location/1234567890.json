@@ -1,0 +1,15 @@
+{
+  "recId": "b3b23cbe-2a5f-4973-bf9f-50b34add21ba",
+  "title": "H 4567",
+  "unitId": "1234567890",
+  "localTime": "2024-10-11 18:29:44",
+  "vgroup": "D1Plows",
+  "latitude": 41.77589,
+  "longitude": -104.75487,
+  "altitude": 4500.2,
+  "speed": 25.0,
+  "heading": 180.0,
+  "plowUp": false,
+  "sander": false,
+  "source": null
+}

@@ -1,0 +1,425 @@
+{
+  "_id": {
+    "$numberLong": "3"
+  },
+  "name": "highland hills",
+  "description": "",
+  "typesOfWork": [
+    {
+      "typeName": "MINOR_ROAD_DEFECT_REPAIR",
+      "isArchitecturalChange": false
+    }
+  ],
+  "roadName": "highland hills",
+  "startDate": {
+    "$date": "2025-10-03T21:07:00.000Z"
+  },
+  "endDate": {
+    "$date": "2025-10-17T21:07:00.000Z"
+  },
+  "timestamp": {
+    "$date": "2025-10-03T21:07:47.476Z"
+  },
+  "areaType": "STATIC",
+  "vehicleImpact": "ALL_LANES_OPEN",
+  "surfaceType": "PAVED",
+  "points": [
+    {
+      "timestamp": {
+        "$numberLong": "1759525672998"
+      },
+      "numSatellites": 0,
+      "accuracy": 25.60300064086914,
+      "latitude": 40.47392272949219,
+      "longitude": -104.96916961669922,
+      "altitude": 1464.0975341796875,
+      "speed": 0,
+      "heading": 0,
+      "marking": {
+        "lanes": [
+          {
+            "order": 0,
+            "type": "GENERAL",
+            "status": "OPEN",
+            "restrictions": []
+          }
+        ],
+        "speedLimitMph": 25
+      }
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525678047"
+      },
+      "numSatellites": 0,
+      "accuracy": 6.997000217437744,
+      "latitude": 40.47395324707031,
+      "longitude": -104.96937561035156,
+      "altitude": 1491.6143798828125,
+      "speed": 0.7989320755004883,
+      "heading": 23.991561889648438
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525683555"
+      },
+      "numSatellites": 0,
+      "accuracy": 4.89300012588501,
+      "latitude": 40.4739990234375,
+      "longitude": -104.96937561035156,
+      "altitude": 1495.199951171875,
+      "speed": 1.8311654329299927,
+      "heading": 323.0068359375
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525688294"
+      },
+      "numSatellites": 0,
+      "accuracy": 13.133999824523926,
+      "latitude": 40.474029541015625,
+      "longitude": -104.96936798095703,
+      "altitude": 1495.199951171875,
+      "speed": 1.049852728843689,
+      "heading": 20.061357498168945
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525693194"
+      },
+      "numSatellites": 0,
+      "accuracy": 8.531000137329102,
+      "latitude": 40.474090576171875,
+      "longitude": -104.96931457519531,
+      "altitude": 1495.199951171875,
+      "speed": 1.0856261253356934,
+      "heading": 17.6844482421875
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525698045"
+      },
+      "numSatellites": 0,
+      "accuracy": 5.729000091552734,
+      "latitude": 40.47412872314453,
+      "longitude": -104.9692611694336,
+      "altitude": 1495.199951171875,
+      "speed": 1.1437631845474243,
+      "heading": 6.339717388153076,
+      "marking": {
+        "refPt": true
+      }
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525702909"
+      },
+      "numSatellites": 0,
+      "accuracy": 4.763999938964844,
+      "latitude": 40.474185943603516,
+      "longitude": -104.96926879882812,
+      "altitude": 1495.199951171875,
+      "speed": 1.162480354309082,
+      "heading": 325.9596862792969
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525707520"
+      },
+      "numSatellites": 0,
+      "accuracy": 5.066999912261963,
+      "latitude": 40.4742317199707,
+      "longitude": -104.96927642822266,
+      "altitude": 1495.199951171875,
+      "speed": 1.1219382286071777,
+      "heading": 343.2747497558594
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525712286"
+      },
+      "numSatellites": 0,
+      "accuracy": 4.869999885559082,
+      "latitude": 40.47428512573242,
+      "longitude": -104.96923065185547,
+      "altitude": 1495.199951171875,
+      "speed": 1.1508336067199707,
+      "heading": 46.69724655151367
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525716893"
+      },
+      "numSatellites": 0,
+      "accuracy": 4.811999797821045,
+      "latitude": 40.47431564331055,
+      "longitude": -104.96915435791016,
+      "altitude": 1495.199951171875,
+      "speed": 1.1284734010696411,
+      "heading": 48.41902542114258
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525721563"
+      },
+      "numSatellites": 0,
+      "accuracy": 4.978000164031982,
+      "latitude": 40.4743537902832,
+      "longitude": -104.96908569335938,
+      "altitude": 1494,
+      "speed": 1.1204338073730469,
+      "heading": 54.00773239135742
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525726289"
+      },
+      "numSatellites": 0,
+      "accuracy": 6.807000160217285,
+      "latitude": 40.47438430786133,
+      "longitude": -104.96903228759766,
+      "altitude": 1494,
+      "speed": 1.1186975240707397,
+      "heading": 48.35152816772461,
+      "marking": {
+        "workersPresent": true
+      }
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525732513"
+      },
+      "numSatellites": 0,
+      "accuracy": 7.301000118255615,
+      "latitude": 40.47443771362305,
+      "longitude": -104.9689712524414,
+      "altitude": 1494,
+      "speed": 1.2632085084915161,
+      "heading": 53.9610710144043
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525737497"
+      },
+      "numSatellites": 0,
+      "accuracy": 4.64900016784668,
+      "latitude": 40.47447967529297,
+      "longitude": -104.96890258789062,
+      "altitude": 1494,
+      "speed": 1.3692824840545654,
+      "heading": 49.013553619384766
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525742384"
+      },
+      "numSatellites": 0,
+      "accuracy": 9.470999717712402,
+      "latitude": 40.474491119384766,
+      "longitude": -104.96887969970703,
+      "altitude": 1494.300048828125,
+      "speed": 1.1971728801727295,
+      "heading": 59.8767204284668
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525746944"
+      },
+      "numSatellites": 0,
+      "accuracy": 7.624000072479248,
+      "latitude": 40.47454071044922,
+      "longitude": -104.96880340576172,
+      "altitude": 1494.300048828125,
+      "speed": 1.191025972366333,
+      "heading": 51.60789108276367
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525751703"
+      },
+      "numSatellites": 0,
+      "accuracy": 6.331999778747559,
+      "latitude": 40.47459030151367,
+      "longitude": -104.96873474121094,
+      "altitude": 1495.0999755859375,
+      "speed": 1.0890421867370605,
+      "heading": 48.434059143066406
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525756295"
+      },
+      "numSatellites": 0,
+      "accuracy": 5.742000102996826,
+      "latitude": 40.47462463378906,
+      "longitude": -104.96867370605469,
+      "altitude": 1495.0999755859375,
+      "speed": 1.1630691289901733,
+      "heading": 59.36991500854492
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525761131"
+      },
+      "numSatellites": 0,
+      "accuracy": 6.584000110626221,
+      "latitude": 40.47465515136719,
+      "longitude": -104.9686050415039,
+      "altitude": 1495.0999755859375,
+      "speed": 1.1710684299468994,
+      "heading": 55.04426193237305
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525766416"
+      },
+      "numSatellites": 0,
+      "accuracy": 7.4770002365112305,
+      "latitude": 40.47468566894531,
+      "longitude": -104.96855926513672,
+      "altitude": 1494.4000244140625,
+      "speed": 1.1183876991271973,
+      "heading": 77.00558471679688,
+      "marking": {
+        "workersPresent": false
+      }
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525771295"
+      },
+      "numSatellites": 0,
+      "accuracy": 7.590000152587891,
+      "latitude": 40.47468948364258,
+      "longitude": -104.96849822998047,
+      "altitude": 1494.0999755859375,
+      "speed": 1.0408705472946167,
+      "heading": 95.57298278808594
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525775908"
+      },
+      "numSatellites": 0,
+      "accuracy": 7.841000080108643,
+      "latitude": 40.47465896606445,
+      "longitude": -104.96843719482422,
+      "altitude": 1494.4000244140625,
+      "speed": 1.1112505197525024,
+      "heading": 140.4705047607422
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525780682"
+      },
+      "numSatellites": 0,
+      "accuracy": 7.692999839782715,
+      "latitude": 40.47461700439453,
+      "longitude": -104.96842193603516,
+      "altitude": 1494.4000244140625,
+      "speed": 1.1924430131912231,
+      "heading": 163.3563690185547
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525785410"
+      },
+      "numSatellites": 0,
+      "accuracy": 8.185999870300293,
+      "latitude": 40.47455978393555,
+      "longitude": -104.96841430664062,
+      "altitude": 1495.4000244140625,
+      "speed": 1.1900997161865234,
+      "heading": 175.9408416748047
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525790049"
+      },
+      "numSatellites": 0,
+      "accuracy": 8.789999961853027,
+      "latitude": 40.474510192871094,
+      "longitude": -104.96842956542969,
+      "altitude": 1494.4000244140625,
+      "speed": 1.128442406654358,
+      "heading": 186.18626403808594
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525794782"
+      },
+      "numSatellites": 0,
+      "accuracy": 9.45199966430664,
+      "latitude": 40.47444534301758,
+      "longitude": -104.96846008300781,
+      "altitude": 1494.4000244140625,
+      "speed": 1.1599706411361694,
+      "heading": 194.29490661621094
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525799373"
+      },
+      "numSatellites": 0,
+      "accuracy": 9.817000389099121,
+      "latitude": 40.47439193725586,
+      "longitude": -104.96844482421875,
+      "altitude": 1494,
+      "speed": 1.1344677209854126,
+      "heading": 192.67300415039062
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525804184"
+      },
+      "numSatellites": 0,
+      "accuracy": 9.295000076293945,
+      "latitude": 40.47433853149414,
+      "longitude": -104.96843719482422,
+      "altitude": 1494,
+      "speed": 1.1574516296386719,
+      "heading": 187.5134735107422
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525808911"
+      },
+      "numSatellites": 0,
+      "accuracy": 8.609999656677246,
+      "latitude": 40.474266052246094,
+      "longitude": -104.96836853027344,
+      "altitude": 1494.5999755859375,
+      "speed": 1.1857601404190063,
+      "heading": 190.4152069091797
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525813640"
+      },
+      "numSatellites": 0,
+      "accuracy": 7.375999927520752,
+      "latitude": 40.47420883178711,
+      "longitude": -104.9683609008789,
+      "altitude": 1494.4000244140625,
+      "speed": 1.1423609256744385,
+      "heading": 176.59280395507812
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1759525818294"
+      },
+      "numSatellites": 0,
+      "accuracy": 7.6539998054504395,
+      "latitude": 40.474151611328125,
+      "longitude": -104.9683609008789,
+      "altitude": 1494.699951171875,
+      "speed": 1.1412100791931152,
+      "heading": 182.9082489013672,
+      "marking": {
+        "refPt": false
+      }
+    }
+  ],
+  "userId": "7263b7db-444e-41d9-8334-e1c4d69662f3",
+  "_class": "com.wzam.api.models.recordings.RecordingWithId"
+}

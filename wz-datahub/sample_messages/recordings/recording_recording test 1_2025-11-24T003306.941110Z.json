@@ -1,0 +1,194 @@
+{
+  "project_id": null,
+  "road_event_id": null,
+  "name": "recording test 1",
+  "description": "description",
+  "types_of_work": [
+    { "type_name": "roadside-work", "is_architectural_change": false }
+  ],
+  "road_name": "road name",
+  "direction": "northbound",
+  "start_date": 1763944020000,
+  "end_date": 1763954820000,
+  "timestamp": 1763944344080,
+  "area_type": "static",
+  "vehicle_impact": "all-lanes-open",
+  "surface_type": "paved",
+  "points": [
+    {
+      "timestamp": 1763418289000,
+      "num_satellites": 0,
+      "accuracy": 3.7899999618530273,
+      "latitude": 41.14800582590331,
+      "longitude": -104.66181155499427,
+      "altitude": 143.8000030517578,
+      "speed": 0.003406423144042492,
+      "heading": 0.0,
+      "marking": {
+        "ref_pt": true,
+        "lanes": [
+          {
+            "order": 0,
+            "type": "general",
+            "status": "open",
+            "restrictions": []
+          },
+          {
+            "order": 1,
+            "type": "general",
+            "status": "open",
+            "restrictions": []
+          }
+        ],
+        "workers_present": null,
+        "speed_limit_mph": 45
+      }
+    },
+    {
+      "timestamp": 1749235723519,
+      "num_satellites": 0,
+      "accuracy": 3.7899999618530273,
+      "latitude": 41.147690714151366,
+      "longitude": -104.661106768065,
+      "altitude": 143.8000030517578,
+      "speed": 0.0572095587849617,
+      "heading": 0.0,
+      "marking": null
+    },
+    {
+      "timestamp": 1749235735526,
+      "num_satellites": 0,
+      "accuracy": 9.9350004196167,
+      "latitude": 41.147408770773694,
+      "longitude": -104.65998351389665,
+      "altitude": 144.00001525878906,
+      "speed": 0.017708472907543182,
+      "heading": 0.0,
+      "marking": {
+        "ref_pt": true,
+        "lanes": null,
+        "workers_present": null,
+        "speed_limit_mph": null
+      }
+    },
+    {
+      "timestamp": 1749235738515,
+      "num_satellites": 0,
+      "accuracy": 9.9350004196167,
+      "latitude": 41.147159996198525,
+      "longitude": -104.65864001381279,
+      "altitude": 144.00001525878906,
+      "speed": 0.021170541644096375,
+      "heading": 0.0,
+      "marking": null
+    },
+    {
+      "timestamp": 1749235741521,
+      "num_satellites": 0,
+      "accuracy": 9.9350004196167,
+      "latitude": 64.8419432,
+      "longitude": -147.8532,
+      "altitude": 144.00001525878906,
+      "speed": 0.008900356478989124,
+      "heading": 0.0,
+      "marking": {
+        "ref_pt": null,
+        "lanes": [
+          {
+            "order": 0,
+            "type": "general",
+            "status": "open",
+            "restrictions": []
+          },
+          {
+            "order": 1,
+            "type": "general",
+            "status": "closed",
+            "restrictions": []
+          }
+        ],
+        "workers_present": null,
+        "speed_limit_mph": null
+      }
+    },
+    {
+      "timestamp": 1749235744529,
+      "num_satellites": 0,
+      "accuracy": 9.9350004196167,
+      "latitude": 41.14696097585892,
+      "longitude": -104.65560062018018,
+      "altitude": 144.00001525878906,
+      "speed": 0.02363746426999569,
+      "heading": 0.0,
+      "marking": null
+    },
+    {
+      "timestamp": 1749235747525,
+      "num_satellites": 0,
+      "accuracy": 9.9350004196167,
+      "latitude": 41.147027316039214,
+      "longitude": -104.65379460367393,
+      "altitude": 144.00001525878906,
+      "speed": 0.1359027624130249,
+      "heading": 34.48659133911133,
+      "marking": {
+        "ref_pt": null,
+        "lanes": null,
+        "workers_present": true,
+        "speed_limit_mph": null
+      }
+    },
+    {
+      "timestamp": 1749235750521,
+      "num_satellites": 0,
+      "accuracy": 10.093999862670898,
+      "latitude": 41.147168288699504,
+      "longitude": -104.65216478390045,
+      "altitude": 144.00001525878906,
+      "speed": 0.011494635604321957,
+      "heading": 0.0,
+      "marking": {
+        "ref_pt": null,
+        "lanes": null,
+        "workers_present": false,
+        "speed_limit_mph": null
+      }
+    },
+    {
+      "timestamp": 1749235753520,
+      "num_satellites": 0,
+      "accuracy": 10.241999626159668,
+      "latitude": 41.147466818038794,
+      "longitude": -104.65011649688674,
+      "altitude": 143.8000030517578,
+      "speed": 0.056656524538993835,
+      "heading": 0.0,
+      "marking": null
+    },
+    {
+      "timestamp": 1749235756522,
+      "num_satellites": 0,
+      "accuracy": 10.265999794006348,
+      "latitude": 41.14776534601887,
+      "longitude": -104.6488390705776,
+      "altitude": 143.8000030517578,
+      "speed": 0.011404730379581451,
+      "heading": 0.0,
+      "marking": {
+        "ref_pt": false,
+        "lanes": null,
+        "workers_present": null,
+        "speed_limit_mph": null
+      }
+    }
+  ],
+  "user_id": "7263b7db-444e-41d9-8334-e1c4d69662f3",
+  "event_schedule": {
+    "start_time": "8:0",
+    "end_time": "20:0",
+    "start_date": "2025-11-23",
+    "end_date": "2025-11-23",
+    "days_of_week": [1, 2, 3, 4, 5],
+    "exclusion": false
+  }
+}

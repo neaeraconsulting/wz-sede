@@ -1,0 +1,31 @@
+{
+  "project_id": null,
+  "road_event_id": null,
+  "name": "jacob test 2 ",
+  "description": "desc",
+  "types_of_work": [
+    { "type_name": "surface-work", "is_architectural_change": true },
+    { "type_name": "below-road-work", "is_architectural_change": false }
+  ],
+  "road_name": "I-25",
+  "direction": "northbound",
+  "workers_present": false,
+  "start_date": 1754538096714,
+  "end_date": 1754596800000,
+  "timestamp": 1754538096714,
+  "area_type": "static",
+  "speed_limit_mph": 25.0,
+  "geometry_type": "linestring",
+  "geometry": [
+    [-147.85507, 64.84267],
+    [-147.8539, 64.84255],
+    [-147.853, 64.842354],
+    [-147.85207, 64.842125]
+  ],
+  "geometry_line_width": 30.0,
+  "license_plate": "ASD123",
+  "surface_type": "paved",
+  "user_id": "5c64ee2d-0c94-4781-9cbc-7d40ab5a4225",
+  "active_schedule": null,
+  "id": 3
+}

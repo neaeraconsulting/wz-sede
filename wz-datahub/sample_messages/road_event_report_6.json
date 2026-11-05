@@ -1,0 +1,118 @@
+{
+  "roadEvent": {
+    "id": "449906",
+    "name": "test_report_2",
+    "status": "ROAD_EVENT_ACTIVE_STATUS_INACTIVE",
+    "startDate": "1970-01-21T05:53:09.560Z",
+    "endDate": "1970-01-21T05:53:19.560Z",
+    "typesOfWork": [
+      {
+        "typeName": "WORK_TYPE_NAME_ROADSIDE_WORK",
+        "isArchitecturalChange": true
+      },
+      {
+        "typeName": "WORK_TYPE_NAME_MINOR_ROAD_DEFECT_REPAIR"
+      }
+    ],
+    "lineString": {
+      "coordinates": {
+        "coordinates": [
+          {
+            "latitude": -147.8346405029297,
+            "longitude": 64.83645629882812
+          },
+          {
+            "latitude": -147.8384246826172,
+            "longitude": 64.83565521240234
+          },
+          {
+            "latitude": -147.84149169921875,
+            "longitude": 64.83447265625
+          },
+          {
+            "latitude": -147.8433837890625,
+            "longitude": 64.8331527709961
+          },
+          {
+            "latitude": -147.84506225585938,
+            "longitude": 64.83151245117188
+          },
+          {
+            "latitude": -147.84695434570312,
+            "longitude": 64.82996368408203
+          }
+        ]
+      }
+    },
+    "bbox": {
+      "lowerLeft": {
+        "latitude": 64.82996368408203,
+        "longitude": -147.84695434570312
+      },
+      "upperRight": {
+        "latitude": 64.83645629882812,
+        "longitude": -147.8346405029297
+      }
+    }
+  },
+  "roadSubEvents": [
+    {
+      "id": "4499060",
+      "workZoneId": "449906",
+      "direction": "ROADWAY_DIRECTION_UNKNOWN",
+      "startDate": "1970-01-21T05:53:09.560Z",
+      "endDate": "1970-01-21T05:53:19.560Z",
+      "beginningCrossStreet": "",
+      "endingCrossStreet": "",
+      "workerPresence": {
+        "areWorkersPresent": true,
+        "method": "WORKER_PRESENCE_METHOD_CHECK_IN_APP",
+        "workerPresenceLastConfirmedDate": "1970-01-21T05:53:09.560Z"
+      },
+      "reducedSpeedLimitKph": 55.0,
+      "startLocationType": "MARKED_LOCATION_TYPE_ROAD_EVENT_START",
+      "endLocationType": "MARKED_LOCATION_TYPE_ROAD_EVENT_END",
+      "lineString": {
+        "coordinates": {
+          "coordinates": [
+            {
+              "latitude": -147.8346405029297,
+              "longitude": 64.83645629882812
+            },
+            {
+              "latitude": -147.8384246826172,
+              "longitude": 64.83565521240234
+            },
+            {
+              "latitude": -147.84149169921875,
+              "longitude": 64.83447265625
+            },
+            {
+              "latitude": -147.8433837890625,
+              "longitude": 64.8331527709961
+            },
+            {
+              "latitude": -147.84506225585938,
+              "longitude": 64.83151245117188
+            },
+            {
+              "latitude": -147.84695434570312,
+              "longitude": 64.82996368408203
+            }
+          ]
+        }
+      },
+      "bbox": {
+        "lowerLeft": {
+          "latitude": 64.82996368408203,
+          "longitude": -147.84695434570312
+        },
+        "upperRight": {
+          "latitude": 64.83645629882812,
+          "longitude": -147.8346405029297
+        }
+      }
+    }
+  ],
+  "fieldDevices": []
+}

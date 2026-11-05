@@ -1,0 +1,151 @@
+keycloak:
+  realm: ${KEYCLOAK_REALM}
+  client-id: ${KEYCLOAK_CLIENT_NAME}
+  client-secret: ${KEYCLOAK_CLIENT_SECRET}
+  endpoint: ${KEYCLOAK_ENDPOINT}
+  admin-registration-emails: ${KEYCLOAK_ADMIN_REGISTRATION_EMAILS}
+ingest:
+  icone:
+    enabled: ${ICONE_INGEST_ENABLED:true}
+    url: ${ICONE_INGEST_URL}
+    api-key: ${ICONE_INGEST_API_KEY}
+    fetch-interval: ${ICONE_INGEST_PERIOD:5m}
+    max-age: ${ICONE_INGEST_MAX_AGE:30m} # Time until un-updated device is considered offline
+    updates-enabled: ${ICONE_INGEST_UPDATES_ENABLED:true}
+  ver-mac:
+    enabled: ${VER_MAC_INGEST_ENABLED:true}
+    url: ${VER_MAC_INGEST_URL}
+    api-key: ${VER_MAC_INGEST_API_KEY}
+    fetch-interval: ${VER_MAC_INGEST_PERIOD:5m}
+    max-age: ${VER_MAC_INGEST_MAX_AGE:30m} # Time until un-updated device is considered offline
+    updates-enabled: ${VER_MAC_INGEST_UPDATES_ENABLED:true}
+  wanco:
+    enabled: ${WANCO_INGEST_ENABLED:true}
+    sabp-enabled: ${WANCO_INGEST_SABP_ENABLED:false}
+    url: ${WANCO_INGEST_URL}
+    token-lifespan: ${WANCO_INGEST_TOKEN_LIFESPAN:15m}
+    api-key: ${WANCO_INGEST_API_KEY}
+    fetch-interval: ${WANCO_INGEST_PERIOD:5m}
+    max-age: ${WANCO_INGEST_MAX_AGE:30m} # Time until un-updated device is considered offline
+    updates-enabled: ${WANCO_INGEST_UPDATES_ENABLED:true}
+  pi-lit:
+    enabled: ${PI_LIT_INGEST_ENABLED:true}
+    url: ${PI_LIT_INGEST_URL}
+    token-lifespan: ${PI_LIT_INGEST_TOKEN_LIFESPAN:24h}
+    username: ${PI_LIT_INGEST_USERNAME}
+    password: ${PI_LIT_INGEST_PASSWORD}
+    fetch-interval: ${PI_LIT_INGEST_PERIOD:5m}
+    max-age: ${PI_LIT_INGEST_MAX_AGE:30m} # Time until un-updated device is considered offline
+    updates-enabled: ${PI_LIT_INGEST_UPDATES_ENABLED:true}
+  wzam-worker:
+    enabled: ${WZAM_WORKER_INGEST_MONITOR_ENABLED:true}
+    max-update-period: ${WZAM_WORKER_INGEST_MAX_UPDATE_PERIOD:5m}
+    expiration-eval-interval: ${WZAM_WORKER_INGEST_MONITOR_EVAL_PERIOD:5m}
+    max-age: ${WZAM_WORKER_INGEST_MAX_AGE:30m} # Time until un-updated device is considered offline
+  wzam-vehicle:
+    enabled: ${WZAM_VEHICLE_INGEST_MONITOR_ENABLED:true}
+    max-update-period: ${WZAM_VEHICLE_INGEST_MAX_UPDATE_PERIOD:5m}
+    expiration-eval-interval: ${WZAM_VEHICLE_INGEST_MONITOR_EVAL_PERIOD:5m}
+    max-age: ${WZAM_VEHICLE_INGEST_MAX_AGE:30m} # Time until un-updated device is considered offline
+update-processing:
+  update-periods-before-offline: 2 # Number of missed update periods before a device is considered offline
+  worker-separation-min-distance-meters: 100 # Minimum distance between workers to consider them separate
+  field-device-road-sub-event-threshold-meters: 100 # Minimum distance between field devices and road sub-events to consider them separate
+  age-before-offline: 30m # 30 minutes of no status updates before a device is considered offline
+  position-filter-radius-meters: 50 # If position changes less than this, it is not considered
+  max-roadway-distance-meters: 50 # Max allowed distance from roadway for GIS snapping
+  field-device-max-re-update-period: ${FIELD_DEVICE_MAX_RE_UPDATE_PERIOD:10s}
+  vehicle-max-re-update-period: ${VEHICLE_MAX_RE_UPDATE_PERIOD:10s}
+  location-change-threshold-meters: ${LOCATION_CHANGE_THRESHOLD_METERS:200} # Minimum change in road sub-event position to consider it an update
+  observation-reeval-period: ${OBSERVATION_REEVAL_PERIOD:5m}
+  worker-location-updates-enabled: ${WORKER_LOCATION_UPDATES_ENABLED:true}
+  vehicle-location-updates-enabled: ${VEHICLE_LOCATION_UPDATES_ENABLED:true}
+gis-service:
+  endpoint: ${GIS_SERVER_ENDPOINT}
+  cache:
+    enabled: ${GIS_SERVICE_CACHE_ENABLED:true}
+    max-size: ${GIS_SERVICE_CACHE_MAX_SIZE:10000}
+    expireAfter: ${GIS_SERVICE_CACHE_EXPIRE_AFTER_MINUTES:60d}
+gis-service-colorado:
+  endpoint: ${GIS_SERVER_COLORADO_ENDPOINT:https://dtdapps.coloradodot.info/arcgis/rest/services/LRS/Routes_withDEC/MapServer/exts/LrsServerRounded}
+audit:
+  logging-enabled: ${AUDIT_LOGGING_ENABLED:true}
+  logging-min-severity: ${AUDIT_LOGGING_MIN_SEVERITY:INFO}
+  auto-flush-age: ${AUDIT_AUTO_FLUSH_AGE:5m}
+app-version:
+  minimum-version: ${APP_MINIMUM_VERSION:0.0.0}
+  latest-version: ${APP_LATEST_VERSION:0.0.0}
+slack-notification:
+  new-user-registration:
+    enabled: ${SLACK_USER_REGISTRATION_NOTIFICATION_ENABLED:true}
+    webhook-url: ${SLACK_USER_REGISTRATION_NOTIFICATION_WEBHOOK_URL}
+  support-request:
+    enabled: ${SLACK_SUPPORT_NOTIFICATION_ENABLED:true}
+    webhook-url: ${SLACK_SUPPORT_NOTIFICATION_WEBHOOK_URL}
+  report:
+    enabled: ${SLACK_REPORT_NOTIFICATION_ENABLED:true}
+    webhook-url: ${SLACK_REPORT_NOTIFICATION_WEBHOOK_URL}
+  mobile-session:
+    enabled: ${SLACK_MOBILE_SESSION_NOTIFICATION_ENABLED:true}
+    webhook-url: ${SLACK_MOBILE_SESSION_NOTIFICATION_WEBHOOK_URL}
+
+spring:
+  application:
+    name: work-zone-data-hub
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: ${KEYCLOAK_ENDPOINT}/realms/${KEYCLOAK_REALM}
+            user-name-attribute: "preferred_username"
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_ENDPOINT}/realms/${KEYCLOAK_REALM}
+          jwk-set-uri: ${KEYCLOAK_ENDPOINT}/realms/${KEYCLOAK_REALM}/protocol/openid-connect/certs
+  data:
+    mongodb:
+      database: ${MONGO_DB_NAME:datahub}
+      host: ${DB_HOST_IP:localhost}
+      port: 27017
+      username: ${MONGO_API_USERNAME:api}
+      password: ${MONGO_API_PASSWORD:api}
+      authenticationDatabase: ${MONGO_AUTH_DB:admin}
+      uri: ${MONGO_URI:null}
+  mail:
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT:25}
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: false
+            required: false
+  kafka:
+    bootstrap-servers: ${KAFKA_BROKER_IP:localhost}:${KAFKA_BROKER_PORT:9092}
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    properties:
+      auto:
+        register:
+          schemas: false
+kafka:
+  topics:
+    autoCreateTopics: true
+    numPartitions: 1
+    numReplicas: 1
+    cleanupPolicy: delete
+    retentionMs: 3600000
+mail:
+  from-address: ${EMAIL_FROM_ADDRESS}
+cors: "*"
+server:
+  port: 8081
+logging:
+  level:
+    org.springframework.security: INFO
+    org.springframework.web: INFO
+    org.springframework.security.oauth2: INFO
+    org.springframework.security.oauth2.server.resource: INFO
+    com.fasterxml.jackson: INFO
+server.servlet.context-path: ${BASE_API_PATH:/datahub}

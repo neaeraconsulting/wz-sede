@@ -1,0 +1,38 @@
+{
+  "type": "FeatureCollection",
+  "feed_info": {
+    "update_date": "2025-09-10T18:29:34.330Z",
+    "version": "0.0",
+    "publisher": "pi-lit",
+    "data_sources": [
+      {
+        "data_source_id": "",
+        "organization_name": "pi-lit"
+      }
+    ]
+  },
+  "features": [
+    {
+      "id": "UC6KP72GDE4WSCUPYT3U",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "device_type": "flashing-beacon",
+          "data_source_id": "",
+          "road_names": ["Prospect Park Way"],
+          "device_status": "ok",
+          "has_automatic_location": true,
+          "update_date": "2025-09-10T18:29:33.844290+00Z",
+          "description": "maintenance",
+          "status_messages": ["Road assistance vehicle on scene"]
+        },
+        "function": "workers-present",
+        "is_flashing": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-105.0340541, 40.5667271]
+      }
+    }
+  ]
+}

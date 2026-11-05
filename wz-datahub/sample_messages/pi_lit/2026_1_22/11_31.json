@@ -1,0 +1,15 @@
+{
+    "type": "FeatureCollection",
+    "feed_info": {
+        "update_date": "2026-01-22T18:30:26.928Z",
+        "version": "0.0",
+        "publisher": "pi-lit",
+        "data_sources": [
+            {
+                "data_source_id": "",
+                "organization_name": "pi-lit"
+            }
+        ]
+    },
+    "features": []
+}

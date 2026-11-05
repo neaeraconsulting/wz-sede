@@ -1,0 +1,84 @@
+#======================================================================================
+# Kafka Connectors configuration settings
+#======================================================================================
+
+#--------------------------------------------------------------------------------------
+# Configuration parameters used to create kafka connectors to sync data from Kafka topics
+# to MongoDB collections.
+#
+# Ref: https://docs.confluent.io/platform/current/connect/index.html#connect-connectors
+#--------------------------------------------------------------------------------------
+
+clusterName: "kafka-connect"
+connectorClass: "com.mongodb.kafka.connect.MongoSinkConnector"
+tasksMax: 1
+
+#--------------------------------------------------------------------------------------
+# Kafka Connectors are grouped by application.  Apps with the corresponding environment variable
+# equal to true are create or updated.
+#   - ode
+#   - geojsonconverter
+#   - conflictmonitor
+#
+# Some Kafka topics have a non-duplicated topic and a duplicated topic.  The duplicated topic will
+# used if the deduplicator is not enabled.
+#   IF env var: KAFKA_TOPIC_CREATE_DEDUPLICATOR = true
+#     - deduplicator
+#   ELSE
+#     - ode_duplicated
+#     - geojsonconverter_duplicated
+#
+# The Kafka Connectors have the following configuration settings:
+#   Required settings:
+#   - topicName: The name of the Kafka topic to read from
+#   - collectionName: The name of the MongoDB collection to write to
+#   Optional settings:
+#   - generateTimestamp: If true, the connector will add a timestamp field to the document
+#   - connectorName: The name of the connector
+#   - useTimestamp: converts the "timestampField" field at the top level of the value to a BSON date
+#     - timestampField: The name of the timestamp field
+#   - useKey: If true, the connector will use the "keyField" as the document _id in MongoDB
+#     - keyField: The name of the key field
+#
+#--------------------------------------------------------------------------------------
+apps:
+  ode:
+    name: jpo-ode
+    connectors:
+  ode_duplicated:
+    name: ode-duplicated
+    connectors:
+  geojsonconverter_duplicated:
+    name: geojsonconverter-duplicated
+    connectors:
+  deduplicator:
+    name: deduplicator
+    connectors:
+  conflictmonitor:
+    name: conflictmonitor
+    connectors:
+  mecdeposit:
+    name: mecdeposit
+    connectors:
+  # Allow for custom connectors to be added - users can override this file and add other kafka connectors here
+  other:
+    name: other
+    connectors:
+      - topicName: topic.conadmin.project
+        collectionName: topic.conadmin.project
+        generateTimestamp: true
+      - topicName: topic.conadmin.work_zone
+        collectionName: topic.conadmin.work_zone
+        generateTimestamp: true
+      - topicName: topic.conadmin.field_device
+        collectionName: topic.conadmin.field_device
+        generateTimestamp: true
+      - topicName: topic.datahub.work_zone
+        collectionName: topic.datahub.work_zone
+        generateTimestamp: true
+      - topicName: topic.datahub.field_device
+        collectionName: topic.datahub.field_device
+        generateTimestamp: true
+      - topicName: topic.datahub.raw_vehicle_location
+        collectionName: topic.datahub.raw_vehicle_location
+        generateTimestamp: true

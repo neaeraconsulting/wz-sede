@@ -1,0 +1,65 @@
+{
+  "type": "FeatureCollection",
+  "feed_info": {
+    "update_date": "2025-09-12T21:28:47.454Z",
+    "version": "0.0",
+    "publisher": "pi-lit",
+    "data_sources": [
+      {
+        "data_source_id": "",
+        "organization_name": "pi-lit"
+      }
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "position": "start",
+        "marker-color": "#00ff00",
+        "marker-size": "medium",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "coordinates": [-104.82669613670915, 41.17530876110095],
+        "type": "Point"
+      },
+      "id": 8
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "position": "end",
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "coordinates": [-104.8286869246328, 41.1659410786059],
+        "type": "Point"
+      }
+    },
+    {
+      "id": "UC6KP72GDE4WSCUPYT3U",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "device_type": "flashing-beacon",
+          "data_source_id": "",
+          "road_names": ["Rue Royal"],
+          "device_status": "ok",
+          "has_automatic_location": true,
+          "update_date": "2025-09-12T21:28:45.145995+00Z",
+          "description": "maintenance",
+          "status_messages": ["Road assistance vehicle on scene"]
+        },
+        "function": "workers-present",
+        "is_flashing": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.8266885, 41.1753151]
+      }
+    }
+  ]
+}

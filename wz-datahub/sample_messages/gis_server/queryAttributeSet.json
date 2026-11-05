@@ -1,0 +1,100 @@
+{
+  "success": true,
+  "displayFieldName": "route_id",
+  "features": [
+    {
+      "attributes": {
+        "route_id": "ML80D",
+        "from_measure": 318.92783801716138,
+        "to_measure": 319.10999958484041,
+        "full_name": "I 80",
+        "prefix_type": "I",
+        "suffix_type": null,
+        "objectid": 36617
+      },
+      "geometry": {
+        "hasZ": true,
+        "hasM": true,
+        "paths": [
+          [
+            [-105.490092513547992, 41.271909887951395, 0, 318.92716960227699],
+            [
+              -105.489801112994016, 41.2719433877280224, 2.3211381624422075e-9,
+              318.942520378783229
+            ],
+            [
+              -105.489472613176261, 41.2719856891034951, 1.5474259561216676e-9,
+              318.959875397733413
+            ],
+            [
+              -105.488303213448816, 41.2721510389103372, 2.3211419507960984e-9,
+              319.02183535038057
+            ],
+            [
+              -105.487133813721371, 41.2723163887171793, 7.7371498913400343e-10,
+              319.083795303027728
+            ],
+            [-105.486915212613, 41.27234688939032, 0, 319.095372556825168],
+            [
+              -105.486638512398841, 41.2723830881283149, 2.3211461842493851e-9,
+              319.1099974999961
+            ]
+          ]
+        ]
+      }
+    }
+  ],
+  "fields": [
+    {
+      "name": "route_id",
+      "type": "esriFieldTypeString",
+      "alias": "Route ID"
+    },
+    {
+      "name": "from_measure",
+      "type": "esriFieldTypeDouble",
+      "alias": "From Measure"
+    },
+    {
+      "name": "to_measure",
+      "type": "esriFieldTypeDouble",
+      "alias": "To Measure"
+    },
+    {
+      "name": "full_name",
+      "type": "esriFieldTypeString",
+      "alias": "full_name",
+      "length": 56
+    },
+    {
+      "name": "prefix_type",
+      "type": "esriFieldTypeString",
+      "alias": "prefix_type",
+      "length": 4
+    },
+    {
+      "name": "suffix_type",
+      "type": "esriFieldTypeString",
+      "alias": "suffix_type",
+      "length": 4
+    },
+    {
+      "name": "objectid",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID"
+    }
+  ],
+  "fieldAliases": {
+    "route_id": "Route ID",
+    "from_measure": "From Measure",
+    "to_measure": "To Measure",
+    "full_name": "full_name",
+    "prefix_type": "prefix_type",
+    "suffix_type": "suffix_type",
+    "objectid": "OBJECTID"
+  },
+  "geometryType": "esriGeometryPolyline",
+  "spatialReference": {
+    "wkid": 4326
+  }
+}

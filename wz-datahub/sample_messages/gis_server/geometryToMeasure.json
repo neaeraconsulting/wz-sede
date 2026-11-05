@@ -1,0 +1,35 @@
+{
+  "unitsOfMeasure": "esriMiles",
+  "spatialReference": {
+    "wkid": 4326
+  },
+  "locations": [
+    {
+      "status": "esriLocatingMultipleLocation",
+      "results": [
+        {
+          "routeId": "ML80D",
+          "measure": 318.92783801716138,
+          "distance": 39.03952732036867,
+          "geometryType": "esriGeometryPoint",
+          "geometry": {
+            "x": -105.49007982517557,
+            "y": 41.2719113466393708,
+            "z": 0
+          }
+        },
+        {
+          "routeId": "ML80I",
+          "measure": 319.10999958484041,
+          "distance": 123.68567561312783,
+          "geometryType": "esriGeometryPoint",
+          "geometry": {
+            "x": -105.490034433998517,
+            "y": 41.2716815079030681,
+            "z": 0
+          }
+        }
+      ]
+    }
+  ]
+}

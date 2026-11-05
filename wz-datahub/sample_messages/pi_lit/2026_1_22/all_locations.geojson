@@ -1,0 +1,122 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          -104.6601159,
+          41.1519274
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "coordinates": [
+          -104.65898984813728,
+          41.14725483278113
+        ],
+        "type": "Point"
+      },
+      "id": 1
+    },
+    {
+      "id": "XZAX4GECY942559S35JZ",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "device_type": "flashing-beacon",
+          "data_source_id": "",
+          "road_names": [
+            "Prairie Center Circle"
+          ],
+          "device_status": "ok",
+          "has_automatic_location": true,
+          "update_date": "2026-01-22T18:32:36.002050+00Z",
+          "description": "maintenance",
+          "status_messages": [
+            "Road assistance vehicle on scene"
+          ]
+        },
+        "function": "workers-present",
+        "is_flashing": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.6498141,
+          41.1475076
+        ]
+      }
+    },
+    {
+      "id": "XZAX4GECY942559S35JZ",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "device_type": "flashing-beacon",
+          "data_source_id": "",
+          "road_names": [
+            "Prairie Center Circle"
+          ],
+          "device_status": "ok",
+          "has_automatic_location": true,
+          "update_date": "2026-01-22T18:39:55.360953+00Z",
+          "description": "maintenance",
+          "status_messages": [
+            "Road assistance vehicle on scene"
+          ]
+        },
+        "function": "workers-present",
+        "is_flashing": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.6478993,
+          41.1479992
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff7b00",
+        "marker-size": "medium",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "coordinates": [
+          -104.64635661214224,
+          41.14863594456466
+        ],
+        "type": "Point"
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "coordinates": [
+          -104.6509389020294,
+          41.15380391380597
+        ],
+        "type": "Point"
+      },
+      "id": 5
+    }
+  ]
+}

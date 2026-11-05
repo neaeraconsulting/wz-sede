@@ -1,0 +1,518 @@
+{
+  "source": "Wanco Fleet Manager API",
+  "version": "2021-12-31",
+  "format": "SABP",
+  "time": "2026-07-10T20:40:10.000Z",
+  "endpoint": "https://api.wancofleet.com/api/2021-12-31/devices/arrowBoards?format=SABP",
+  "data": {
+    "document": {
+      "format": "SABP",
+      "version": "1.0",
+      "source": "Wanco Fleet Manager API v2021-12-31",
+      "tier": 2,
+      "timestamp": "2026-07-10T20:40:10.000Z"
+    },
+    "arrowboards": [
+      {
+        "id": "Wanco;AB-25-L;2070001879",
+        "name": "AB-2070001879",
+        "lastContact": "2026-07-10T20:39:02.000Z",
+        "firmware": "FIRMWARE;2.05.43",
+        "voltage": 14.56,
+        "errorCodes": [
+          "StatusStowedPosition"
+        ],
+        "owner": {
+          "company": "ZZ-CAB-Traffic Safety Services Inc-Cheyenne"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-07-10T20:39:02.000Z",
+          "lat": 41.73463,
+          "lon": -106.645248,
+          "tried": "2026-07-10T20:39:02.000Z"
+        },
+        "display": {
+          "compass": 52,
+          "pattern": "Off",
+          "deployed": false
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L;2070001841",
+        "name": "AB-2070001841",
+        "lastContact": "2026-07-10T20:35:09.000Z",
+        "firmware": "FIRMWARE;2.05.43",
+        "voltage": 14.03,
+        "owner": {
+          "company": "ZZ-CAB-Traffic Safety Services Inc-Cheyenne"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-07-10T20:35:09.000Z",
+          "lat": 41.736778,
+          "lon": -106.595673,
+          "tried": "2026-07-10T20:35:09.000Z"
+        },
+        "display": {
+          "compass": 242,
+          "pattern": "Left Chevron, sequential",
+          "deployed": true
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L;2070001842",
+        "name": "AB-2070001842",
+        "lastContact": "2026-07-10T19:53:47.000Z",
+        "firmware": "FIRMWARE;2.05.43",
+        "voltage": 14.3,
+        "errorCodes": [
+          "StatusStowedPosition"
+        ],
+        "owner": {
+          "company": "ZZ-CAB-Traffic Safety Services Inc-Cheyenne"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-07-10T19:53:47.000Z",
+          "lat": 41.138476,
+          "lon": -104.704213,
+          "tried": "2026-07-10T19:53:47.000Z"
+        },
+        "display": {
+          "compass": 192,
+          "pattern": "Off",
+          "deployed": false
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L;2070001861",
+        "name": "AB-2070001861",
+        "lastContact": "2026-07-10T19:42:31.000Z",
+        "firmware": "FIRMWARE;2.05.43",
+        "voltage": 14.11,
+        "owner": {
+          "company": "ZZ-CAB-Traffic Safety Services Inc-Cheyenne"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-07-10T19:42:31.000Z",
+          "lat": 41.156403,
+          "lon": -104.441225,
+          "tried": "2026-07-10T19:42:31.000Z"
+        },
+        "display": {
+          "compass": 94,
+          "pattern": "Right Chevron, sequential",
+          "deployed": true
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L;2070001860",
+        "name": "AB-2070001860",
+        "lastContact": "2026-07-10T20:21:07.000Z",
+        "firmware": "FIRMWARE;2.05.43",
+        "voltage": 14.08,
+        "owner": {
+          "company": "ZZ-CAB-Traffic Safety Services Inc-Cheyenne"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-07-10T20:21:07.000Z",
+          "lat": 41.152445,
+          "lon": -104.202613,
+          "tried": "2026-07-10T20:21:07.000Z"
+        },
+        "display": {
+          "compass": 256,
+          "pattern": "Left Chevron, sequential",
+          "deployed": true
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L;2070001862",
+        "name": "AB-2070001862",
+        "lastContact": "2026-07-10T20:03:40.000Z",
+        "firmware": "FIRMWARE;2.05.43",
+        "voltage": 15.33,
+        "errorCodes": [
+          "StatusStowedPosition"
+        ],
+        "owner": {
+          "company": "Wanco Tracker Pool"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-07-10T20:03:40.000Z",
+          "lat": 41.287724,
+          "lon": -105.591906,
+          "tried": "2026-07-10T20:03:40.000Z"
+        },
+        "display": {
+          "compass": 81,
+          "pattern": "Off",
+          "deployed": false
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L;2070000246",
+        "name": "AB-2070000246",
+        "lastContact": "2025-06-19T06:35:34.000Z",
+        "firmware": "FIRMWARE;2.05.43",
+        "voltage": 10.7,
+        "errorCodes": [
+          "CriticalVoltageLow",
+          "CriticalVoltageLampsDisabled",
+          "CriticalVoltageDisconnect",
+          "WarningVoltageLow",
+          "StatusStowedPosition",
+          "StatusSolarCharging"
+        ],
+        "owner": {
+          "company": "ZZ-CAB-Traffic Safety Services Inc-Cheyenne"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2025-06-19T06:35:34.000Z",
+          "lat": 41.115825,
+          "lon": -104.848388,
+          "tried": "2025-06-19T06:35:34.000Z"
+        },
+        "display": {
+          "compass": 96,
+          "pattern": "Off",
+          "deployed": false
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L;2070000081",
+        "name": "AB-2070000081",
+        "lastContact": "2026-07-10T20:32:45.000Z",
+        "firmware": "FIRMWARE;2.05.43",
+        "voltage": 15.66,
+        "owner": {
+          "company": "ZZ-CAB-Traffic Safety Services Inc-Cheyenne"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-07-10T20:32:45.000Z",
+          "lat": 41.736871,
+          "lon": -106.747905,
+          "tried": "2026-07-10T20:32:45.000Z"
+        },
+        "display": {
+          "compass": 88,
+          "pattern": "Right Chevron, sequential",
+          "deployed": true
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L;2070001149",
+        "name": "AB-2070001149",
+        "lastContact": "2026-07-10T20:38:15.000Z",
+        "firmware": "FIRMWARE;2.05.54",
+        "voltage": 14.25,
+        "errorCodes": [
+          "StatusStowedPosition"
+        ],
+        "owner": {
+          "company": "ZZ-CAB-Wyoming Dept of Transportation"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-07-10T20:38:15.000Z",
+          "lat": 41.284315,
+          "lon": -105.588608,
+          "tried": "2026-07-10T20:38:15.000Z"
+        },
+        "display": {
+          "compass": 244,
+          "pattern": "Off",
+          "deployed": false
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L;2070000829",
+        "name": "AB-2070000829",
+        "lastContact": "2026-07-10T20:38:24.000Z",
+        "firmware": "FIRMWARE;2.05.54",
+        "voltage": 14.03,
+        "errorCodes": [
+          "StatusStowedPosition"
+        ],
+        "owner": {
+          "company": "ZZ-CAB-Wyoming Dept of Transportation"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-07-10T20:38:24.000Z",
+          "lat": 41.284281,
+          "lon": -105.588561,
+          "tried": "2026-07-10T20:38:24.000Z"
+        },
+        "display": {
+          "compass": 254,
+          "pattern": "Off",
+          "deployed": false
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L-TR;2070007932",
+        "name": "AB-2070007932",
+        "lastContact": "2026-07-10T20:40:10.000Z",
+        "firmware": "FIRMWARE;3.02.02",
+        "voltage": 13.66,
+        "errorCodes": [
+          "StatusSolarCharging"
+        ],
+        "owner": {
+          "company": "ZZ-CAB-Straight Stripe Painting, Inc"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-07-10T20:40:10.000Z",
+          "lat": 41.542641,
+          "lon": -109.785326,
+          "tried": "2026-07-10T20:40:10.000Z"
+        },
+        "display": {
+          "compass": 2,
+          "pattern": "Right Chevron, sequential",
+          "deployed": true
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L-TR;2070008305",
+        "name": "AB-2070008305",
+        "lastContact": "2026-04-20T19:20:17.000Z",
+        "firmware": "FIRMWARE;3.02.02",
+        "voltage": 14.48,
+        "errorCodes": [
+          "StatusStowedPosition"
+        ],
+        "owner": {
+          "company": "ZZ-CAB-Wyoming Dept of Transportation"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-04-21T02:09:34.000Z",
+          "lat": 42.887788,
+          "lon": -108.790191,
+          "tried": "2026-04-21T02:09:34.000Z"
+        },
+        "display": {
+          "compass": 213,
+          "pattern": "Off",
+          "deployed": false
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L;2070008671",
+        "name": "AB-2070008671",
+        "lastContact": "2026-04-01T12:19:58.000Z",
+        "firmware": "FIRMWARE;2.05.54",
+        "voltage": 11.0,
+        "errorCodes": [
+          "CriticalVoltageLow",
+          "CriticalVoltageLampsDisabled",
+          "CriticalVoltageDisconnect",
+          "WarningVoltageLow",
+          "StatusStowedPosition",
+          "StatusSolarCharging"
+        ],
+        "owner": {
+          "company": "Cantel Barricade"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-04-01T12:19:58.000Z",
+          "lat": 41.326416,
+          "lon": -105.611218,
+          "tried": "2026-04-01T12:19:58.000Z"
+        },
+        "display": {
+          "compass": 17,
+          "pattern": "Off",
+          "deployed": false
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L;2070010269",
+        "name": "AB-2070010269",
+        "lastContact": "2026-07-10T20:33:46.000Z",
+        "firmware": "FIRMWARE;2.05.54",
+        "voltage": 14.13,
+        "errorCodes": [
+          "StatusStowedPosition"
+        ],
+        "owner": {
+          "company": "ZZ-CAB-Traffic Safety Services Inc-Bismarck"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-07-10T20:33:46.000Z",
+          "lat": 41.138288,
+          "lon": -104.703118,
+          "tried": "2026-07-10T20:33:46.000Z"
+        },
+        "display": {
+          "compass": 95,
+          "pattern": "Off",
+          "deployed": false
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L;2070010372",
+        "name": "AB-2070010372",
+        "lastContact": "2026-07-10T20:19:18.000Z",
+        "firmware": "FIRMWARE;2.05.54",
+        "voltage": 15.21,
+        "errorCodes": [
+          "StatusStowedPosition"
+        ],
+        "owner": {
+          "company": "ZZ-CAB-Traffic Safety Services Inc-Bismarck"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-07-10T20:19:18.000Z",
+          "lat": 41.138225,
+          "lon": -104.703126,
+          "tried": "2026-07-10T20:19:18.000Z"
+        },
+        "display": {
+          "compass": 81,
+          "pattern": "Off",
+          "deployed": false
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L;2070010373",
+        "name": "AB-2070010373",
+        "lastContact": "2026-07-10T19:53:28.000Z",
+        "firmware": "FIRMWARE;2.05.54",
+        "voltage": 14.97,
+        "errorCodes": [
+          "StatusStowedPosition"
+        ],
+        "owner": {
+          "company": "ZZ-CAB-Traffic Safety Services Inc-Bismarck"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-07-10T19:53:28.000Z",
+          "lat": 41.13827,
+          "lon": -104.703166,
+          "tried": "2026-07-10T19:53:28.000Z"
+        },
+        "display": {
+          "compass": 88,
+          "pattern": "Off",
+          "deployed": false
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L;2070010369",
+        "name": "AB-2070010369",
+        "lastContact": "2026-07-10T20:17:38.000Z",
+        "firmware": "FIRMWARE;2.05.54",
+        "voltage": 14.21,
+        "errorCodes": [
+          "StatusStowedPosition"
+        ],
+        "owner": {
+          "company": "ZZ-CAB-Traffic Safety Services Inc-Bismarck"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-07-10T20:17:38.000Z",
+          "lat": 41.138268,
+          "lon": -104.703103,
+          "tried": "2026-07-10T20:17:38.000Z"
+        },
+        "display": {
+          "compass": 95,
+          "pattern": "Off",
+          "deployed": false
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L;2070010370",
+        "name": "AB-2070010370",
+        "lastContact": "2026-07-10T19:53:27.000Z",
+        "firmware": "FIRMWARE;2.05.54",
+        "voltage": 16.23,
+        "errorCodes": [
+          "StatusStowedPosition"
+        ],
+        "owner": {
+          "company": "ZZ-CAB-Traffic Safety Services Inc-Bismarck"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-07-10T19:53:27.000Z",
+          "lat": 41.138268,
+          "lon": -104.703191,
+          "tried": "2026-07-10T19:53:27.000Z"
+        },
+        "display": {
+          "compass": 70,
+          "pattern": "Off",
+          "deployed": false
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L;2070010367",
+        "name": "AB-2070010367",
+        "lastContact": "2026-07-10T20:11:54.000Z",
+        "firmware": "FIRMWARE;2.05.54",
+        "voltage": 15.4,
+        "errorCodes": [
+          "StatusStowedPosition"
+        ],
+        "owner": {
+          "company": "ZZ-CAB-Traffic Safety Services Inc-Bismarck"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-07-10T20:11:54.000Z",
+          "lat": 41.138259,
+          "lon": -104.703218,
+          "tried": "2026-07-10T20:11:54.000Z"
+        },
+        "display": {
+          "compass": 75,
+          "pattern": "Off",
+          "deployed": false
+        }
+      },
+      {
+        "id": "Wanco;AB-25-L;2070010375",
+        "name": "AB-2070010375",
+        "lastContact": "2026-07-10T20:11:43.000Z",
+        "firmware": "FIRMWARE;2.05.54",
+        "voltage": 13.99,
+        "errorCodes": [
+          "StatusStowedPosition",
+          "StatusSolarCharging"
+        ],
+        "owner": {
+          "company": "ZZ-CAB-Traffic Safety Services Inc-Bismarck"
+        },
+        "gps": {
+          "lock": 2,
+          "sampled": "2026-07-10T20:11:43.000Z",
+          "lat": 41.13821,
+          "lon": -104.703106,
+          "tried": "2026-07-10T20:11:43.000Z"
+        },
+        "display": {
+          "compass": 78,
+          "pattern": "Off",
+          "deployed": false
+        }
+      }
+    ]
+  },
+  "continued": "https://api.wancofleet.com/api/2021-12-31/devices/arrowBoards?format=SABP&page=2"
+}

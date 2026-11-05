@@ -1,0 +1,59 @@
+{
+  "feed_info": {
+    "update_date": "2026-03-19T20:16:50.1700000Z",
+    "publisher": "iCone Products LLC",
+    "contact_email": "support@iconeproducts.com",
+    "version": "4.2",
+    "data_sources": [
+      {
+        "data_source_id": "67899A97-0F3E-4683-B169-75C09C3B8F67",
+        "update_date": "2026-03-19T20:16:50.1700000Z",
+        "organization_name": "iCone Products LLC",
+        "contact_email": "support@iconeproducts.com"
+      }
+    ],
+    "custom": {
+      "oldest_feature": "2026-03-18T20:16:49.8900000Z",
+      "oldest_location": "2026-03-18T20:16:49.8900000Z",
+      "username": "wydotfeeds",
+      "active_only": false,
+      "require_location": false,
+      "allow_custom_enums": true,
+      "include_custom": true,
+      "force_spec_required": false
+    }
+  },
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "FBA146F5-3140-49B7-87F9-6F97CC6FF5C7",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.845694, 41.1654464]
+      },
+      "properties": {
+        "core_details": {
+          "device_type": "arrow-board",
+          "data_source_id": "67899A97-0F3E-4683-B169-75C09C3B8F67",
+          "device_status": "ok",
+          "update_date": "2026-03-19T20:16:37Z",
+          "has_automatic_location": true,
+          "description": "Arrow, Display Down",
+          "serial_number": "0xd009fa"
+        },
+        "pattern": "right-chevron-flashing",
+        "is_in_transport_position": true,
+        "custom": {
+          "isPublic": false,
+          "voltage": 10.38,
+          "start_date": "2026-03-19T20:16:05",
+          "location_details": {
+            "first_date": "2026-03-19T20:11:00",
+            "update_date": "2026-03-19T20:16:00"
+          }
+        }
+      }
+    }
+  ]
+}

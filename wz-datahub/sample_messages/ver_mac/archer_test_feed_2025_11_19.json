@@ -1,0 +1,113 @@
+{
+  "feed_info": {
+    "publisher": "Ver-Mac inc.",
+    "version": "4.2",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "data_sources": [
+      {
+        "data_source_id": "84fe2b51-92b1-4305-8e48-5865c535233a",
+        "organization_name": "Ver-Mac inc.",
+        "update_date": "2025-11-19T17:08:08Z"
+      }
+    ],
+    "update_date": "2025-11-19T17:08:09Z",
+    "update_frequency": 1,
+    "contact_name": "Ver-Mac Support",
+    "contact_email": "support@ver-mac.com"
+  },
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "8274b8ab-e69f-4d05-a0fb-2b1f2d102e2c",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "device_type": "location-marker",
+          "data_source_id": "84fe2b51-92b1-4305-8e48-5865c535233a",
+          "road_direction": "eastbound",
+          "road_names": ["Highland Hills Cir"],
+          "device_status": "ok",
+          "update_date": "2025-12-01T15:05:12Z",
+          "has_automatic_location": true,
+          "name": "OF1215635_1",
+          "status_messages": ["OK"],
+          "road_event_ids": [],
+          "make": "Signalisation VER-MAC Inc.",
+          "model": "WorkzoneMarker",
+          "serial_number": "357273224111338",
+          "firmware_version": "3.02"
+        },
+        "marked_locations": [
+          {
+            "type": "work-zone-start"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.66032488768384, 41.14747142318791]
+      }
+    },
+    {
+      "id": "612e6db1-676c-4248-a90d-44d133e988b3",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "device_type": "location-marker",
+          "data_source_id": "84fe2b51-92b1-4305-8e48-5865c535233a",
+          "road_direction": "eastbound",
+          "road_names": ["Highland Hills Cir"],
+          "device_status": "ok",
+          "update_date": "2025-11-19T23:05:02Z",
+          "has_automatic_location": true,
+          "name": "OF1215636_1",
+          "status_messages": ["OK"],
+          "road_event_ids": [],
+          "make": "Signalisation VER-MAC Inc.",
+          "model": "WorkzoneMarker",
+          "serial_number": "357273224165748",
+          "firmware_version": "3.02"
+        },
+        "marked_locations": [
+          {
+            "type": "work-zone-end"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.649004247632, 41.14773678144121]
+      }
+    },
+    {
+      "id": "7bc74adf-60c0-46db-a5d5-8c6859743e28",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "device_type": "arrow-board",
+          "data_source_id": "84fe2b51-92b1-4305-8e48-5865c535233a",
+          "road_direction": "eastbound",
+          "road_names": ["Happy Jack Rd"],
+          "device_status": "ok",
+          "update_date": "2025-11-19T23:05:02Z",
+          "has_automatic_location": true,
+          "name": "WYDOT Connected Arrow 2112",
+          "description": "OF1215637_1",
+          "status_messages": ["OK"],
+          "road_event_ids": [],
+          "make": "Signalisation VER-MAC Inc.",
+          "model": "SmartArrow",
+          "serial_number": "350344989042112",
+          "firmware_version": "3.02",
+          "velocity_kph": 0.0
+        },
+        "pattern": "right-arrow-sequential",
+        "is_in_transport_position": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.65690007004976, 41.14702362089105]
+      }
+    }
+  ]
+}

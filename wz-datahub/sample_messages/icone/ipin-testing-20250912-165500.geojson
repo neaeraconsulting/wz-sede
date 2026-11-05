@@ -1,0 +1,233 @@
+{
+  "feed_info": {
+    "update_date": "2025-09-12T16:12:27.3200000Z",
+    "publisher": "iCone Products LLC",
+    "contact_email": "support@iconeproducts.com",
+    "version": "4.2",
+    "data_sources": [
+      {
+        "data_source_id": "67899A97-0F3E-4683-B169-75C09C3B8F67",
+        "update_date": "2025-09-12T16:12:27.3200000Z",
+        "organization_name": "iCone Products LLC",
+        "contact_email": "support@iconeproducts.com"
+      }
+    ],
+    "custom": {
+      "oldest_feature": "2025-09-11T16:12:27.0033333Z",
+      "oldest_location": "2025-09-11T16:12:27.0033333Z",
+      "username": "wydotfeeds",
+      "active_only": false,
+      "require_location": false,
+      "allow_custom_enums": true,
+      "include_custom": true,
+      "force_spec_required": false
+    }
+  },
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "1772A123-16CD-44CD-81D2-8718E52D4353",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.8267168, 41.1758279]
+      },
+      "properties": {
+        "core_details": {
+          "device_type": "location-marker",
+          "data_source_id": "67899A97-0F3E-4683-B169-75C09C3B8F67",
+          "device_status": "ok",
+          "update_date": "2025-09-12T16:43:59Z",
+          "has_automatic_location": true,
+          "description": "iPin",
+          "serial_number": "0xb00615"
+        },
+        "marked_locations": [
+          {
+            "type": "road-event-start"
+          }
+        ],
+        "custom": {
+          "isPublic": true,
+          "isActive": true,
+          "voltage": 3.44,
+          "start_date": "2025-09-12T16:07:10",
+          "location_details": {
+            "first_date": "2025-09-12T16:09:00",
+            "update_date": "2025-09-12T16:43:00"
+          },
+          "waze_incident": {
+            "type": "HAZARD",
+            "description": "Roadwork Active"
+          }
+        }
+      }
+    },
+    {
+      "id": "F8894B5C-15A7-4B11-8EA1-D162EBA5ED0B",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.826749, 41.176231]
+      },
+      "properties": {
+        "core_details": {
+          "device_type": "location-marker",
+          "data_source_id": "67899A97-0F3E-4683-B169-75C09C3B8F67",
+          "device_status": "ok",
+          "update_date": "2025-09-12T16:46:13Z",
+          "has_automatic_location": true,
+          "description": "iPin",
+          "serial_number": "0xb00612"
+        },
+        "marked_locations": [
+          {
+            "type": "road-event-start"
+          }
+        ],
+        "custom": {
+          "isPublic": true,
+          "isActive": true,
+          "voltage": 3.44,
+          "start_date": "2025-09-12T16:08:08",
+          "location_details": {
+            "first_date": "2025-09-12T16:09:00",
+            "update_date": "2025-09-12T16:46:00"
+          },
+          "waze_incident": {
+            "type": "HAZARD",
+            "description": "Roadwork Active"
+          }
+        }
+      }
+    },
+    {
+      "id": "378355C9-0CC8-4474-8F23-6841333E84C6",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.8267265, 41.1754674]
+      },
+      "properties": {
+        "core_details": {
+          "device_type": "location-marker",
+          "data_source_id": "67899A97-0F3E-4683-B169-75C09C3B8F67",
+          "device_status": "ok",
+          "update_date": "2025-09-12T16:46:24Z",
+          "has_automatic_location": true,
+          "description": "iPin",
+          "serial_number": "0xb00616"
+        },
+        "marked_locations": [
+          {
+            "type": "road-event-start"
+          }
+        ],
+        "custom": {
+          "isPublic": true,
+          "isActive": true,
+          "voltage": 3.43,
+          "start_date": "2025-09-12T16:05:16",
+          "location_details": {
+            "first_date": "2025-09-12T16:10:00",
+            "update_date": "2025-09-12T16:46:00"
+          },
+          "waze_incident": {
+            "type": "HAZARD",
+            "description": "Roadwork Active"
+          }
+        }
+      }
+    },
+    {
+      "id": "60B1AE01-2EE3-4FB9-BFA9-9A86D8C52B88",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.8267078, 41.1752209]
+      },
+      "properties": {
+        "core_details": {
+          "device_type": "location-marker",
+          "data_source_id": "67899A97-0F3E-4683-B169-75C09C3B8F67",
+          "device_status": "ok",
+          "update_date": "2025-09-12T16:35:42Z",
+          "has_automatic_location": true,
+          "description": "iPin",
+          "serial_number": "0xb00617"
+        },
+        "marked_locations": [
+          {
+            "type": "road-event-start"
+          }
+        ],
+        "custom": {
+          "isPublic": true,
+          "isActive": true,
+          "voltage": 3.35,
+          "start_date": "2025-09-12T16:17:47",
+          "location_details": {
+            "first_date": "2025-09-12T16:27:00",
+            "update_date": "2025-09-12T16:35:00"
+          },
+          "waze_incident": {
+            "type": "HAZARD",
+            "description": "Roadwork Active"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "coordinates": [-104.8267448815769, 41.1762391688576],
+        "type": "Point"
+      },
+      "id": 5
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "coordinates": [-104.826742832, 41.17581664],
+        "type": "Point"
+      },
+      "id": 6
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "coordinates": [-104.82672386, 41.17547709],
+        "type": "Point"
+      },
+      "id": 7
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "coordinates": [-104.826726386, 41.175196959],
+        "type": "Point"
+      },
+      "id": 8
+    }
+  ]
+}

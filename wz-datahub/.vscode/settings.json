@@ -1,0 +1,42 @@
+{
+  "editor.formatOnSave": true,
+  "editor.rulers": [80], // Adds a visual ruler at 80 characters
+  "editor.detectIndentation": false,
+  "cSpell.words": [
+    "Arrowboard",
+    "arrowboards",
+    "backchannel",
+    "bbox",
+    "conadmin",
+    "Configurer",
+    "creationtime",
+    "csvfile",
+    "datahub",
+    "fasterxml",
+    "frontchannel",
+    "HDOP",
+    "Icone",
+    "LINESTRING",
+    "Lngs",
+    "millis",
+    "MULTIPOINT",
+    "pjson",
+    "SABP",
+    "updatetime",
+    "userinfo",
+    "wanco",
+    "wydot",
+    "wzam",
+    "wzdx"
+  ],
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "[java]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  },
+  "java.debug.settings.onBuildFailureProceed": true,
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.jdt.ls.vmargs": "-Xmx32G -Xms256m",
+  "python-envs.defaultEnvManager": "ms-python.python:system",
+  "python-envs.pythonProjects": []
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="Assets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="asset" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="status">
+                <xs:complexType>
+                  <xs:attribute name="starttime" type="xs:dateTime"></xs:attribute>
+                  <xs:attribute name="updated" type="xs:dateTime"></xs:attribute>
+                  <xs:attribute name="lat" type="xs:double"></xs:attribute>
+                  <xs:attribute name="lng" type="xs:double"></xs:attribute>
+                  <xs:attribute name="loctime" type="xs:dateTime"></xs:attribute>
+                  <xs:attribute name="arrow" type="arrowType"></xs:attribute>
+                  <xs:attribute name="beacon" type="beaconType"></xs:attribute>
+                  <xs:attribute name="flashers" type="beaconType"></xs:attribute>
+                  <xs:attribute name="updown" type="updownType"></xs:attribute>
+                  <xs:attribute name="downup" type="updownType"></xs:attribute>
+                  <xs:attribute name="tma" type="tmaType"></xs:attribute>
+                  <xs:attribute name="signal" type="signalType"></xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:int"></xs:attribute>
+            <xs:attribute name="name" type="xs:string"></xs:attribute>
+            <xs:attribute name="type" type="xs:string"></xs:attribute>
+            <xs:attribute name="grpID" type="xs:int"></xs:attribute>
+            <xs:attribute name="grpName" type="xs:string"></xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="time" type="xs:dateTime"></xs:attribute>
+      <xs:attribute name="user" type="xs:string"></xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="arrowType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OFF" />
+      <xs:enumeration value="Caution - Bar" />
+      <xs:enumeration value="Caution - Corners" />
+      <xs:enumeration value="Caution - Diamonds" />
+      <xs:enumeration value="Left Arrow" />
+      <xs:enumeration value="Left Chevron" />
+      <xs:enumeration value="Right Arrow" />
+      <xs:enumeration value="Right Chevron" />
+      <xs:enumeration value="Double Arrow" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="beaconType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OFF" />
+      <xs:enumeration value="ACTIVE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="updownType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Down" />
+      <xs:enumeration value="Up" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tmaType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Stowed" />
+      <xs:enumeration value="Deployed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="signalType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OFF" />
+      <xs:enumeration value="ACTIVE" />
+      <xs:enumeration value="FAULT" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
