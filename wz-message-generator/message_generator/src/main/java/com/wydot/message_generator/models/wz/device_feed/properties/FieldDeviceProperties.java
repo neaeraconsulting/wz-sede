@@ -1,0 +1,16 @@
+package com.wydot.message_generator.models.wz.device_feed.properties;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.wydot.message_generator.models.wz.device_feed.FieldDeviceCoreDetails;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+public abstract class FieldDeviceProperties {
+    @JsonProperty("core_details")
+    private FieldDeviceCoreDetails coreDetails;
+}

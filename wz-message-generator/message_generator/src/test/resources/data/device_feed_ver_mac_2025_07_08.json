@@ -1,0 +1,254 @@
+{
+  "feed_info": {
+    "publisher": "Ver-Mac inc.",
+    "version": "4.2",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "data_sources": [
+      {
+        "data_source_id": "bbb3d770-c8fe-43fd-9fea-13f32ae1de23",
+        "organization_name": "Ver-Mac inc.",
+        "update_date": "2025-07-10T00:05:19Z",
+        "update_frequency": 3600
+      }
+    ],
+    "update_date": "2025-07-10T00:05:23Z",
+    "update_frequency": 1,
+    "contact_name": "Ver-Mac Support",
+    "contact_email": "support@ver-mac.com"
+  },
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "53bd58c0-6db6-4541-9767-c26dac988321",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "device_type": "location-marker",
+          "data_source_id": "bbb3d770-c8fe-43fd-9fea-13f32ae1de23",
+          "road_direction": "southbound",
+          "road_names": ["US-151 S"],
+          "device_status": "ok",
+          "update_date": "2025-07-09T23:57:43Z",
+          "has_automatic_location": true,
+          "name": "SB US-18 Start of WZ WZLM001",
+          "status_messages": ["OK"],
+          "make": "Signalisation VER-MAC Inc.",
+          "model": "WorkzoneMarker",
+          "serial_number": "350344980356867",
+          "firmware_version": "2.01"
+        },
+        "marked_locations": [
+          {
+            "type": "work-zone-start"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-90.06102639282227, 42.96684295507812]
+      }
+    },
+    {
+      "id": "8fb02e1c-5a73-4cd6-9adc-126b62bd693c",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "device_type": "hybrid-sign",
+          "data_source_id": "bbb3d770-c8fe-43fd-9fea-13f32ae1de23",
+          "road_direction": "northbound",
+          "road_names": ["I-43 N"],
+          "device_status": "ok",
+          "update_date": "2025-07-09T23:43:21Z",
+          "has_automatic_location": true,
+          "name": "SB US-18 #SL0015",
+          "status_messages": ["OK"],
+          "make": "Signalisation VER-MAC Inc.",
+          "model": "TMG SAMA5 VMS",
+          "serial_number": "DCCBA8012C93",
+          "firmware_version": "2.195, 2.25"
+        },
+        "dynamic_message_function": "speed-limit",
+        "dynamic_message_text": "(Beacon)55",
+        "static_sign_text": "SPEED LIMIT"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-90.0771255493164, 42.9666748046875]
+      }
+    },
+    {
+      "id": "b1e190f9-67c0-4dab-9229-78303e9846c9",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "device_type": "hybrid-sign",
+          "data_source_id": "bbb3d770-c8fe-43fd-9fea-13f32ae1de23",
+          "road_direction": "northbound",
+          "road_names": ["US-151 N"],
+          "device_status": "ok",
+          "update_date": "2025-07-09T23:21:21Z",
+          "has_automatic_location": true,
+          "name": "NB US-18 SL0028",
+          "status_messages": ["OK"],
+          "make": "Signalisation VER-MAC Inc.",
+          "model": "TMG SAMA5 VMS",
+          "serial_number": "DCCBA8013D84",
+          "firmware_version": "2.195, 2.25"
+        },
+        "dynamic_message_function": "speed-limit",
+        "dynamic_message_text": "(Beacon)55",
+        "static_sign_text": "SPEED LIMIT"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-90.11195373535156, 42.95252990722656]
+      }
+    },
+    {
+      "id": "abdba891-a7fa-4021-86eb-100f2475644c",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "device_type": "location-marker",
+          "data_source_id": "bbb3d770-c8fe-43fd-9fea-13f32ae1de23",
+          "road_direction": "northbound",
+          "road_names": ["US-151 N"],
+          "device_status": "error",
+          "update_date": "2025-07-09T23:32:49Z",
+          "has_automatic_location": true,
+          "name": "NB US-18 WZLM0006",
+          "status_messages": ["Controller error", "GPS error"],
+          "make": "Signalisation VER-MAC Inc.",
+          "model": "WorkzoneMarker",
+          "serial_number": "358942054096160",
+          "firmware_version": "2.01"
+        },
+        "marked_locations": [
+          {
+            "type": "work-zone-start"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-90.11915173529411, 42.94355985294118]
+      }
+    },
+    {
+      "id": "45e432c1-3381-4b2a-b960-28b26491c9b7",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "device_type": "location-marker",
+          "data_source_id": "bbb3d770-c8fe-43fd-9fea-13f32ae1de23",
+          "road_direction": "northbound",
+          "road_names": ["US-151 N"],
+          "device_status": "error",
+          "update_date": "2025-07-09T21:51:21Z",
+          "has_automatic_location": true,
+          "name": "NB US-18 WZLM-0008",
+          "status_messages": ["GPS error", "Communication Timeout"],
+          "make": "Signalisation VER-MAC Inc.",
+          "model": "WorkzoneMarker",
+          "serial_number": "350344984370708",
+          "firmware_version": "2.01"
+        },
+        "marked_locations": [
+          {
+            "type": "work-zone-end"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-90.0844855, 42.966733500000004]
+      }
+    },
+    {
+      "id": "60b4cf94-9945-4b54-9dfc-6159eae2a61c",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "device_type": "location-marker",
+          "data_source_id": "bbb3d770-c8fe-43fd-9fea-13f32ae1de23",
+          "road_direction": "southbound",
+          "road_names": ["US-151 S"],
+          "device_status": "ok",
+          "update_date": "2025-07-10T00:05:19Z",
+          "has_automatic_location": true,
+          "name": "SB US-18 WZLM007",
+          "description": "350344983182609",
+          "status_messages": ["OK"],
+          "make": "Signalisation VER-MAC Inc.",
+          "model": "WorkzoneMarker",
+          "serial_number": "350344983182609",
+          "firmware_version": "2.01"
+        },
+        "marked_locations": [
+          {
+            "type": "work-zone-end"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-90.10776467877929, 42.9583766241748]
+      }
+    },
+    {
+      "id": "83f5553b-d839-4eb6-b6c2-48df85f120e0",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "device_type": "arrow-board",
+          "data_source_id": "bbb3d770-c8fe-43fd-9fea-13f32ae1de23",
+          "road_direction": "southbound",
+          "road_names": ["US-151 S"],
+          "device_status": "ok",
+          "update_date": "2025-07-09T23:27:50Z",
+          "has_automatic_location": true,
+          "name": "SB US-18 SAB001",
+          "description": "MFI ",
+          "status_messages": ["OK"],
+          "make": "Signalisation VER-MAC Inc.",
+          "model": "SmartArrow",
+          "serial_number": "350344984528743",
+          "firmware_version": "5.04"
+        },
+        "pattern": "left-arrow-flashing",
+        "is_in_transport_position": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-90.08338165283203, 42.96706771850586]
+      }
+    },
+    {
+      "id": "d9115411-2bd8-403d-9039-1caeecee8fc4",
+      "type": "Feature",
+      "properties": {
+        "core_details": {
+          "device_type": "arrow-board",
+          "data_source_id": "bbb3d770-c8fe-43fd-9fea-13f32ae1de23",
+          "road_direction": "northbound",
+          "road_names": ["US-151 N"],
+          "device_status": "ok",
+          "update_date": "2025-07-09T23:58:29Z",
+          "has_automatic_location": true,
+          "name": "NB US-18 SAB003",
+          "status_messages": ["OK"],
+          "make": "Signalisation VER-MAC Inc.",
+          "model": "SmartArrow",
+          "serial_number": "350344984504470",
+          "firmware_version": "5.04"
+        },
+        "pattern": "right-arrow-flashing",
+        "is_in_transport_position": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-90.1087875366211, 42.956581115722656]
+      }
+    }
+  ]
+}

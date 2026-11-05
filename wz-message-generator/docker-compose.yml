@@ -1,0 +1,66 @@
+include:
+  - ./jpo-utils/docker-compose-connect.yml
+  - ./jpo-utils/docker-compose-kafka.yml
+  - ./jpo-utils/docker-compose-mongo.yml
+  - ./jpo-utils/docker-compose-monitoring.yml
+
+services:
+  wzam_keycloak:
+    profiles:
+      - wzam_keycloak
+      - local
+      - all
+    image: wzam_keycloak:latest
+    build:
+      context: ./resources/keycloak
+    restart: always
+    ports:
+      - "8084:8080"
+    environment:
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      MOBILE_API_CLIENT_SECRET: ${KEYCLOAK_API_CLIENT_SECRET_KEY}
+    logging:
+      options:
+        max-size: "10m"
+    volumes:
+      - keycloak:/opt/keycloak/data/
+
+  message_generator:
+    profiles:
+      - message_generator
+      - deployment
+      - all
+    build:
+      context: ./message_generator
+    image: message_generator:latest
+    restart: always
+    ports:
+      - "8092:8082"
+    environment:
+      KEYCLOAK_REALM: ${KEYCLOAK_REALM}
+      KEYCLOAK_CLIENT_NAME: ${KEYCLOAK_API_CLIENT_ID}
+      KEYCLOAK_CLIENT_SECRET: ${KEYCLOAK_API_CLIENT_SECRET_KEY}
+      KEYCLOAK_ENDPOINT: ${KEYCLOAK_ENDPOINT}
+
+      BASE_API_PATH: ${BASE_API_PATH:-/message-generator}
+
+      MONGO_URI: ${MONGO_URI}
+
+      KAFKA_BROKER_IP: ${KAFKA_BROKER_IP}
+      KAFKA_BROKER_PORT: ${KAFKA_BROKER_PORT}
+
+      SDX_ENDPOINT: ${SDX_ENDPOINT}
+      SDX_ACCESS_TOKEN: ${SDX_ACCESS_TOKEN}
+
+      WZDX_PUBLISHER: ${WZDX_PUBLISHER}
+      WZDX_CONTACT_NAME: ${WZDX_CONTACT_NAME}
+      WZDX_CONTACT_EMAIL: ${WZDX_CONTACT_EMAIL}
+
+      DATAHUB_API_ENDPOINT: ${DATAHUB_API_ENDPOINT}
+    logging:
+      options:
+        max-size: "10m"
+
+volumes:
+  keycloak:

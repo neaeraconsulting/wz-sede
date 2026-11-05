@@ -1,0 +1,73 @@
+keycloak:
+  realm: ${KEYCLOAK_REALM}
+  client-id: ${KEYCLOAK_CLIENT_NAME}
+  client-secret: ${KEYCLOAK_CLIENT_SECRET}
+  endpoint: ${KEYCLOAK_ENDPOINT}
+
+sdx:
+  enabled: ${SDX_INTEGRATION_ENABLED:true}
+  endpoint: ${SDX_ENDPOINT}
+  access-token: ${SDX_ACCESS_TOKEN}
+
+message-generation:
+  cwz:
+    publisher: ${CWZ_PUBLISHER:Wyoming DOT}
+    contact-name: ${CWZ_CONTACT_NAME:Wyoming DOT}
+    contact-email: ${CWZ_CONTACT_EMAIL:wyoroad@wyo.gov}
+    data-source:
+      id: ${WYDOT_DATA_SOURCE_ID:df223d50-fda0-4f09-b57f-823ccdbc6439}
+      organization-name: ${WYDOT_DATA_SOURCE_ORG_NAME:Wyoming DOT}
+      update-frequency: ${WYDOT_DATA_SOURCE_UPDATE_FREQUENCY:300}
+      contact-name: ${WYDOT_DATA_SOURCE_CONTACT_NAME:Wyoming DOT}
+      contact-email: ${WYDOT_DATA_SOURCE_CONTACT_EMAIL:wyoroad@wyo.gov}
+
+message-cleanup:
+  enabled: ${MESSAGE_CLEANUP_ENABLED:true}
+  eval-interval: ${MESSAGE_CLEANUP_EVAL_INTERVAL:1m}
+
+datahub-api:
+  endpoint: ${DATAHUB_API_ENDPOINT}
+
+spring:
+  application:
+    name: work-zone-message-generator
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: ${KEYCLOAK_ENDPOINT}/realms/${KEYCLOAK_REALM}
+            user-name-attribute: "preferred_username"
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_ENDPOINT}/realms/${KEYCLOAK_REALM}
+          jwk-set-uri: ${KEYCLOAK_ENDPOINT}/realms/${KEYCLOAK_REALM}/protocol/openid-connect/certs
+  data:
+    mongodb:
+      uri: ${MONGO_URI}
+  kafka:
+    bootstrap-servers: ${KAFKA_BROKER_IP:localhost}:${KAFKA_BROKER_PORT:9092}
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    properties:
+      auto:
+        register:
+          schemas: false
+kafka:
+  topics:
+    autoCreateTopics: true
+    numPartitions: 1
+    numReplicas: 1
+    cleanupPolicy: delete
+    retentionMs: 3600000
+cors: "*"
+server:
+  port: 8082
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.security.oauth2: DEBUG
+    org.springframework.security.oauth2.server.resource: DEBUG
+    com.fasterxml.jackson: DEBUG
+server.servlet.context-path: ${BASE_API_PATH:/message-generator}
