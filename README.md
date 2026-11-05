@@ -1,21 +1,24 @@
-# Work Zone Data Management (wz-sede)
+# Wyoming's Work Zone Statewide Enterprise Data Environment (WZ-SEDE)
 
-A collection of projects for collecting, managing, and publishing smart work zone data: a field reporting mobile app, a data hub that aggregates and normalizes work zone information, shared Protobuf schemas, and a message generator that publishes standardized WZDx and CWZ messages.
+This repository contains the projects and tools that make up Wyoming's Work Zone Statewide Enterprise Data Environment (WZ-SEDE), part of a 2024 USDOT Smart Grant. This includes projects for collecting, managing, and publishing smart work zone data: a field reporting mobile app, a data hub that aggregates and normalizes work zone information, construction administrator management and review software, shared Protobuf schemas, and a message generator that publishes standardized WZDx and CWZ messages.
+
+![Dataflow Diagram](./docs/dataflows_all.png)
 
 ## Prerequisites
 
 Each project's README has its own run instructions. Between them, you will need:
 
-| Dependency | Version | Needed by |
-|---|---|---|
-| Git | any recent | all |
-| Docker and Docker Compose | recent | wz-datahub, wz-message-generator (Kafka, MongoDB, PostgreSQL, Keycloak, and the services themselves) |
-| JDK | 21 | wz-datahub (`datahub`), wz-message-generator (`message_generator`), wz-datahub-schemas |
-| Apache Maven | 3.9+ (`mvnw` wrapper included in message_generator) | Java projects, wz-datahub-schemas |
-| Flutter SDK | 3.24.5+ (managed via [fvm](https://fvm.app/)) | wz-activity-monitor |
-| Dart SDK | bundled with Flutter | wz-activity-monitor (`build_runner`) |
-| `protoc` | 3.25.x recommended | wz-activity-monitor (Dart protobuf generation); Maven downloads its own for Java |
-| Python | 3.x with pip | wz-datahub `api` (FastAPI), `gen_cwz.py` in wz-message-generator |
+| Dependency                | Version                                             | Needed by                                                                                            |
+| ------------------------- | --------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Git                       | any recent                                          | all                                                                                                  |
+| Docker and Docker Compose | recent                                              | wz-datahub, wz-message-generator (Kafka, MongoDB, PostgreSQL, Keycloak, and the services themselves) |
+| JDK                       | 21                                                  | wz-datahub, conadmin (backend), wz-message-generator, wz-datahub-schemas                             |
+| Apache Maven              | 3.9+ (`mvnw` wrapper included in message_generator) | Java projects, wz-datahub-schemas                                                                    |
+| Flutter SDK               | 3.24.5+ (managed via [fvm](https://fvm.app/))       | wz-activity-monitor                                                                                  |
+| Dart SDK                  | bundled with Flutter                                | wz-activity-monitor (`build_runner`)                                                                 |
+| Node.js                   | 24+                                                 | conadmin (webapp)                                                                                    |
+| Make                      | any recent                                          | conadmin (backend)                                                                                   |
+| `protoc`                  | 3.25.x recommended                                  | wz-activity-monitor (Dart protobuf generation); Maven downloads its own for Java                     |
 
 Runtime infrastructure, normally started through the docker compose files:
 
@@ -29,12 +32,12 @@ Configuration: copy each project's `sample.env` to `.env` and fill in values. Th
 
 ## Projects
 
-| Project | Description | Stack |
-|---|---|---|
-| [wz-activity-monitor](./wz-activity-monitor) | Mobile/web app for field personnel to report work zone activities and record work zones | Flutter / Dart |
-| [wz-datahub](./wz-datahub) | Aggregates data from TMC data centers, field devices, construction vehicles, and the activity monitor; produces CWZ and WZDx messages and the data needed for TIM and RSM messages | Java Spring Boot, Python FastAPI, Keycloak, PostgreSQL, MongoDB, Kafka |
-| [wz-datahub-schemas](./wz-datahub-schemas) | Protobuf definitions shared between the DataHub, ConAdmin, and clients | Protobuf, Maven |
-| [wz-message-generator](./wz-message-generator) | Translates road events into WZDx and CWZ messages and deposits them to the SDX | Java Spring Boot, Kafka, MongoDB |
+| Project                                        | Description                                                                                                                                                                        | Stack                                                  |
+| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| [wz-activity-monitor](./wz-activity-monitor)   | Mobile/web app for field personnel to report work zone activities and record work zones                                                                                            | Flutter / Dart                                         |
+| [wz-datahub](./wz-datahub)                     | Aggregates data from TMC data centers, field devices, construction vehicles, and the activity monitor; produces CWZ and WZDx messages and the data needed for TIM and RSM messages | Java Spring Boot, Keycloak, PostgreSQL, MongoDB, Kafka |
+| [wz-datahub-schemas](./wz-datahub-schemas)     | Protobuf definitions shared between the DataHub, ConAdmin, and clients                                                                                                             | Protobuf, Maven                                        |
+| [wz-message-generator](./wz-message-generator) | Translates road events into WZDx and CWZ messages and deposits them to the SDX                                                                                                     | Java Spring Boot, Kafka, MongoDB                       |
 
 ## Architecture
 
@@ -113,8 +116,8 @@ flowchart TD
 Allows authenticated personnel to report work zone activities from the field:
 
 - **Reports**: ongoing one-off work, e.g. lighting repair
-  - *static*: non-moving events
-  - *mobile*: dynamic events, tied to a license plate or on-device location syncing
+  - _static_: non-moving events
+  - _mobile_: dynamic events, tied to a license plate or on-device location syncing
 - **Recordings**: mapping a work zone road section or activity area by driving through and recording signage and worker presence
 - Uploading and downloading reports and recordings
 
@@ -130,15 +133,19 @@ Uses live data from TMC data centers, deployed field devices, active constructio
 
 Sub-projects:
 
-- `api`: receives reports from the reporting app and manages them in Postgres (Python [FastAPI](https://fastapi.tiangolo.com/))
 - `datahub`: receives external data, processes requested updates, and generates output messages (Java Spring Boot)
+- `jpo-utils`: utility scripts for managing MongoDB and other infrastructure components
 - `resources`: Keycloak and Postgres configuration scripts
+- `sample_messages`: directory containing sample message files for testing and reference
 
 Services in its docker compose file:
 
-- `wzam_api`: Python API handling reporting app interactions and reading/writing Postgres
-- `wzam_keycloak`: Keycloak for API and app authentication
-- `wzam_postgres`: PostgreSQL storing projects, road segments, activity areas, reports, and recordings
+- datahub: DataHub application, which handles receiving external data, processing requested updates, and generating output messages
+- wzam_keycloak: Keycloak image which handles api and reporting app authentication
+- wzam_postgres: PostgreSQL server which stores project, road segment, activity area, reports, and recordings
+- mongo_full: MongoDB server for storing work zone data
+- kafka_full: Kafka broker for message streaming
+- kafka_connect: Kafka Connect for integrating Kafka with other systems
 
 Run instructions: see [wz-datahub/README.md](./wz-datahub/README.md) and [wz-datahub/datahub/README.md](./wz-datahub/datahub/README.md).
 

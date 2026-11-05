@@ -6,14 +6,15 @@ The DataHub data flows and interfaces are shown here: ![Dataflow Diagram](./data
 
 This repository contains the following sub-projects:
 
-- /api
-  - API for receiving reports from the reporting app, and managing reports in Postgres
-  - Framework: Python [FastAPI](https://fastapi.tiangolo.com/)
 - /datahub
   - DataHub application, which handles receiving external data, processing requested updates, and generating output messages
   - Framework: Java SpringBoot
+- /jpo-utils
+  - Submodule with utility scripts for managing MongoDB and other infrastructure components
 - /resources
   - Keycloak and Postgres database configuration scripts
+- /sample_messages
+  - Directory containing sample message files for testing and reference
 
 ## Installation
 
@@ -31,8 +32,11 @@ After setting up your environment file, use the following command to run all of 
 docker compose up --build -d
 ```
 
-This will run the following images:
+This will run images defined in the COMPOSE_PROFILES env var. This project includes the following docker containers:
 
-- wzam_api: Python api which handles interactions with the reporting app and reads/writes data to postgres
+- datahub: DataHub application, which handles receiving external data, processing requested updates, and generating output messages
 - wzam_keycloak: Keycloak image which handles api and reporting app authentication
 - wzam_postgres: PostgreSQL server which stores project, road segment, activity area, reports, and recordings
+- mongo_full: MongoDB server for storing work zone data
+- kafka_full: Kafka broker for message streaming
+- kafka_connect: Kafka Connect for integrating Kafka with other systems
