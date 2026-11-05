@@ -23,7 +23,7 @@ Run `mvn clean package` to generate the models.
 
 # Using as a library
 
-This repository is used as a git submodule. To import the generated models as a maven library, you can run:
+This project is consumed directly by sibling projects in this repo (the Dockerfiles build it from `../wz-datahub-schemas`). To import the generated models as a maven library locally, you can run:
 
 ```shell
 mvn install # This installs this library in your local maven repository

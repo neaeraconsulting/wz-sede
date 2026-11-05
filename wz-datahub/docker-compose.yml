@@ -74,7 +74,8 @@ services:
       - deployment
       - all
     build:
-      context: ./datahub
+      context: ..
+      dockerfile: wz-datahub/datahub/Dockerfile
     image: datahub:latest
     restart: always
     ports:

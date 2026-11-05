@@ -1,6 +1,0 @@
-[submodule "jpo-utils"]
-	path = jpo-utils
-	url = https://github.com/CDOT-CV/jpo-utils
-[submodule "datahub/wz-datahub-schemas"]
-	path = datahub/wz-datahub-schemas
-	url = https://bitbucket.org/wyomingdot/wz-datahub-schemas.git

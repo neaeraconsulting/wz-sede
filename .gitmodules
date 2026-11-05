@@ -1,0 +1,6 @@
+[submodule "wz-datahub/jpo-utils"]
+	path = wz-datahub/jpo-utils
+	url = https://github.com/usdot-jpo-ode/jpo-utils.git
+[submodule "wz-message-generator/jpo-utils"]
+	path = wz-message-generator/jpo-utils
+	url = https://github.com/usdot-jpo-ode/jpo-utils.git
