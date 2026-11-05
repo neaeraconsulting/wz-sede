@@ -1,0 +1,99 @@
+syntax = "proto3";
+
+package datahub.v1;
+
+option java_package = "wyo.dot.protobuf";
+option java_outer_classname = "DataHubToConAdminProto";
+option java_multiple_files = true;
+
+import "field_device.proto";
+import "google/protobuf/timestamp.proto";
+import "road_event.proto";
+import "road_sub_event.proto";
+import "common.proto";
+
+
+// Interface Messages
+message DataHubFieldDeviceUpdate {
+    uint64 request_id = 1;
+    google.protobuf.Timestamp timestamp = 2;
+
+    // We use oneof here to support easy addition of new message types as the system evolves
+    oneof type {
+        CreateFieldDevice created = 3;
+        UpdateFieldDevice updated = 4;
+    }
+}
+
+message DataHubRoadEventUpdate {
+    uint64 request_id = 1;
+    google.protobuf.Timestamp timestamp = 2;
+
+    // We use oneof here to support easy addition of new message types as the system evolves
+    oneof type {
+        CreateRoadEvent created = 3;
+        UpdateRoadEvent updated = 4;
+    }
+}
+
+
+// Action Types - not to be used outside of the Interface Types defined above.
+message CreateFieldDevice {
+    FieldDevice field_device = 1;
+}
+
+message UpdateFieldDevice {
+    FieldDevice field_device = 1;
+}
+
+message CreateRoadEvent {
+  reserved 3;
+    RoadEvent road_event = 1;
+    DataHubUpdateSource source = 2;
+    repeated RoadSubEvent road_sub_events = 4;
+}
+
+message UpdateRoadEvent {
+  reserved 3,4,5;
+    RoadEvent road_event = 1;
+    DataHubUpdateSource source = 2;
+    repeated RoadSubEvent road_sub_events = 6;
+}
+
+// Data Types
+message ReportSummary {
+    reserved 5,6;
+    uint64 id = 1;
+    string name = 2;
+    string description = 3;
+    google.protobuf.Timestamp timestamp = 4;
+    ContactInfo contact_info = 7;
+}
+
+message RecordingSummary {
+    uint64 id = 1;
+    string name = 2;
+    string description = 3;
+    google.protobuf.Timestamp timestamp = 4;
+    double length_meters = 5;
+    double position_accuracy_meters = 6;
+    ContactInfo contact_info = 7;
+}
+
+message FieldDeviceSummaryArray {
+    repeated FieldDeviceSummary field_device_summary = 1;
+}
+
+message FieldDeviceSummary {
+    uint64 id = 1;
+    FieldDevice device = 2;
+    google.protobuf.Timestamp update_date = 3;
+}
+
+message DataHubUpdateSource {
+    oneof source {
+        ReportSummary report_summary = 1;
+        RecordingSummary recording_summary = 2;
+        FieldDeviceSummaryArray field_device_summaries = 3;
+    }
+}

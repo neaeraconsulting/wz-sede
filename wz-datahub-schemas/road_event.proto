@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package datahub.v1;
+
+option java_package = "wyo.dot.protobuf";
+option java_outer_classname = "RoadEventProto";
+option java_multiple_files = true;
+
+import "common.proto";
+import "wzdx.proto";
+import "google/type/timeofday.proto";
+import "google/type/date.proto";
+import "google/protobuf/timestamp.proto";
+
+message RoadEvent {
+    reserved 3,11,16,17;
+
+    uint64 id = 1;
+    optional uint64 project_id = 2;
+    string name = 4;
+    string description = 5;
+    RoadEventActiveStatus status = 6;
+    google.protobuf.Timestamp start_date = 7;
+    optional google.protobuf.Timestamp end_date = 8;
+    WorkZoneType area_type = 9;
+    repeated TypeOfWork types_of_work = 10;
+    oneof Geometry {
+        PointGeometry point = 12;
+        LineStringGeometry line_string = 13;
+        PolygonGeometry polygon = 14;
+    }
+    optional BoundingBox bbox = 15;
+    optional EventRecurrence default_schedule = 18; // If included, apply this schedule to all related road_sub_events
+                                                    // Else, refer to the EventRecurrence included on each road_sub_event
+    repeated string linked_field_device_ids = 19;
+    
+    enum RoadEventActiveStatus {
+        ROAD_EVENT_ACTIVE_STATUS_UNKNOWN = 0;
+        ROAD_EVENT_ACTIVE_STATUS_ACTIVE = 1;
+        ROAD_EVENT_ACTIVE_STATUS_INACTIVE = 2;
+    }
+
+}
+
+message EventRecurrence {
+  // the time of day the event becomes active
+  google.type.TimeOfDay start_time = 1;
+  // the time of day the event becomes inactive
+  google.type.TimeOfDay end_time = 2;
+  // the date the event becomes active
+  google.type.Date start_date = 3;
+  // the date teh event becomes inactive
+  google.type.Date end_date = 4;
+
+
+  bool monday = 5;
+  bool tuesday = 6;
+  bool wednesday = 7;
+  bool thursday = 8;
+  bool friday = 9;
+  bool saturday = 10;
+  bool sunday = 11;
+
+  optional bool exclusion = 12; // If false, the time span is included
+  // If true, the time span is excluded from other EventRecurrence entries
+
+}

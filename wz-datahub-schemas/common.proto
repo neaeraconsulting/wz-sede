@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+package datahub.v1;
+
+option java_package = "wyo.dot.protobuf";
+option java_outer_classname = "CommonProto";
+option java_multiple_files = true;
+
+import "google/type/latlng.proto";
+
+
+message ContactInfo {
+    string first_name = 1;
+    string last_name = 2;
+    string email = 3;
+    PhoneNumber phone_number = 4;
+}
+
+message PhoneNumber {
+    int32 country_code = 1; // +1
+    int32 area_code = 2; // 307
+    string number = 3; // 123-4567
+}
+
+// ------------ GeoJSON Types ------------
+message Geometry {
+    oneof geometry {
+        PointGeometry point = 1;
+        MultiPointGeometry multi_point = 2;
+        MultiLineStringGeometry line_strings = 3;
+        MultiPolygonGeometry polygons = 4;
+    }
+}
+
+message PointGeometry {
+    google.type.LatLng coordinates = 1;
+}
+
+message MultiPolygonGeometry {
+    repeated PolygonGeometry polygons = 1;
+}
+
+message PolygonGeometry {
+    PointArray coordinates = 1;
+}
+
+message MultiLineStringGeometry {
+    repeated LineStringGeometry line_strings = 1;
+}
+
+message LineStringGeometry {
+    PointArray coordinates = 1;
+    optional float line_width_m = 2;
+}
+
+message MultiPointGeometry {
+    repeated google.type.LatLng coordinates = 1;
+}
+
+message PointArray {
+    repeated google.type.LatLng coordinates = 1;
+}
+
+message BoundingBox {
+    google.type.LatLng lower_left = 1;
+    google.type.LatLng upper_right = 2;
+}
+
+enum RoadSurfaceType {
+    ROAD_SURFACE_UNKNOWN = 0;
+    ROAD_SURFACE_TYPE_PAVED = 1;
+    ROAD_SURFACE_TYPE_GRAVEL = 2;
+    ROAD_SURFACE_TYPE_DIRT = 3;
+    ROAD_SURFACE_TYPE_GROOVED = 4;
+}
+
+// https://github.com/usdot-jpo-ode/wzdx/blob/develop/spec-content/enumerated-types/MarkedLocationType.md
+enum MarkedLocationType {
+    MARKED_LOCATION_TYPE_UNKNOWN = 0;
+    MARKED_LOCATION_TYPE_GENERIC = 1;
+    MARKED_LOCATION_TYPE_FLAGGER = 2;
+    MARKED_LOCATION_TYPE_LANE_CLOSURE_START = 3;
+    MARKED_LOCATION_TYPE_LANE_CLOSURE_END = 4;
+    MARKED_LOCATION_TYPE_WORKER_PRESENCE_START = 5;
+    MARKED_LOCATION_TYPE_WORKER_PRESENCE_END = 6;
+    MARKED_LOCATION_TYPE_WORKER_POSITION = 7;
+    MARKED_LOCATION_TYPE_ROAD_CLOSURE_START = 8;
+    MARKED_LOCATION_TYPE_ROAD_CLOSURE_END = 9;
+    MARKED_LOCATION_TYPE_ROAD_EVENT_START = 10;
+    MARKED_LOCATION_TYPE_ROAD_EVENT_END = 11;
+    MARKED_LOCATION_TYPE_SPEED_REDUCTION_START = 12;
+    MARKED_LOCATION_TYPE_SPEED_REDUCTION_END = 13;
+    MARKED_LOCATION_TYPE_INCIDENT_START = 14;
+    MARKED_LOCATION_TYPE_INCIDENT_END = 15;
+    MARKED_LOCATION_TYPE_APPROACH_REGION = 16;
+}

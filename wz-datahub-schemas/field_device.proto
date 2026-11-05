@@ -1,0 +1,206 @@
+syntax = "proto3";
+
+package datahub.v1;
+
+option java_package = "wyo.dot.protobuf";
+option java_outer_classname = "FieldDeviceProto";
+option java_multiple_files = true;
+
+import "common.proto";
+import "wzdx.proto";
+import "google/protobuf/timestamp.proto";
+
+message FieldDevice {
+    reserved 9;
+    
+    oneof Device {
+        ArrowBoard arrow_board = 1;
+        Camera camera = 2;
+        DynamicMessageSign dynamic_message_sign = 3;
+        FlashingBeacon flashing_beacon = 4;
+        HybridSign hybrid_sign = 5;
+        LocationMarker location_marker = 6;
+        TrafficSensor traffic_sensor = 7;
+        TrafficSignal traffic_signal = 8;
+        MobileVehicle mobile_vehicle = 16;
+        FieldWorker field_worker = 17;
+    }
+
+    string id = 18; // UUID
+    optional uint64 project_id = 10;
+    optional uint64 road_event_id = 11;
+    MarkedLocationType location_type = 12;
+    PointGeometry geometry = 13;
+    optional BoundingBox bbox = 14;
+    FieldDeviceCoreDetails core_details = 15;
+
+    enum FieldDeviceStatus {
+        FIELD_DEVICE_STATUS_UNKNOWN = 0;
+        FIELD_DEVICE_STATUS_OK = 1;
+        FIELD_DEVICE_STATUS_WARNING = 2;
+        FIELD_DEVICE_STATUS_ERROR = 3;
+        // Device is not reachable - powered off or no connection
+        FIELD_DEVICE_STATUS_OFFLINE = 4;
+        // Device information is available, but is stale
+        FIELD_DEVICE_STATUS_INACTIVE = 5;
+    }
+
+    message FieldDeviceCoreDetails {
+        FieldDeviceStatus device_status = 1;
+        bool has_automatic_location = 2;
+        optional RoadwayDirection road_direction = 3;
+        repeated string road_names = 4;
+        string name = 5;
+        optional string description = 6;
+        repeated string status_messages = 7; // error or warning messages
+        bool is_moving = 8;
+        optional double milepost = 12;
+        string make = 13;
+        string model = 14;
+        string serial_number = 15;
+        optional string firmware_version = 16;
+        optional double velocity_kph = 17;
+        optional double heading = 18; // in degrees
+    }
+
+    message ArrowBoard {
+        reserved 1,3;
+        ArrowBoardPattern pattern = 2;
+        ArrowBoardTransportPosition is_in_transport_position = 4;
+
+        enum ArrowBoardTransportPosition {
+            ARROW_BOARD_TRANSPORT_POSITION_UNKNOWN = 0;
+            ARROW_BOARD_TRANSPORT_POSITION_STOWED = 1;
+            ARROW_BOARD_TRANSPORT_POSITION_DEPLOYED = 2;
+        }
+
+        // https://github.com/usdot-jpo-ode/wzdx/blob/develop/spec-content/enumerated-types/ArrowBoardPattern.md
+        enum ArrowBoardPattern {
+            ARROW_BOARD_PATTERN_UNKNOWN = 0;
+            ARROW_BOARD_PATTERN_BLANK = 1;
+            ARROW_BOARD_PATTERN_RIGHT_ARROW_STATIC = 2;
+            ARROW_BOARD_PATTERN_RIGHT_ARROW_FLASHING = 3;
+            ARROW_BOARD_PATTERN_RIGHT_ARROW_SEQUENTIAL = 4;
+            ARROW_BOARD_PATTERN_RIGHT_CHEVRON_STATIC = 5;
+            ARROW_BOARD_PATTERN_RIGHT_CHEVRON_FLASHING = 6;
+            ARROW_BOARD_PATTERN_RIGHT_CHEVRON_SEQUENTIAL = 7;
+            ARROW_BOARD_PATTERN_LEFT_ARROW_STATIC = 8;
+            ARROW_BOARD_PATTERN_LEFT_ARROW_FLASHING = 9;
+            ARROW_BOARD_PATTERN_LEFT_ARROW_SEQUENTIAL = 10;
+            ARROW_BOARD_PATTERN_LEFT_CHEVRON_STATIC = 11;
+            ARROW_BOARD_PATTERN_LEFT_CHEVRON_FLASHING = 12;
+            ARROW_BOARD_PATTERN_LEFT_CHEVRON_SEQUENTIAL = 13;
+            ARROW_BOARD_PATTERN_BIDIRECTIONAL_ARROW_STATIC = 14;
+            ARROW_BOARD_PATTERN_BIDIRECTIONAL_ARROW_FLASHING = 15;
+            ARROW_BOARD_PATTERN_LINE_FLASHING = 16;
+            ARROW_BOARD_PATTERN_DIAMONDS_ALTERNATING = 17;
+            ARROW_BOARD_PATTERN_FOUR_CORNERS_FLASHING = 18;
+        }
+    }
+
+    message Camera {
+        reserved 1;
+        optional string image_url = 2;
+        optional google.protobuf.Timestamp image_timestamp = 3;
+    }
+
+    message DynamicMessageSign {
+        reserved 1;
+
+        // The MULTI (Mark-Up Language for Transportation Information, see NTCIP 1203 v03) formatted string describing the message currently posted to the sign.
+        string message_multi_string = 2;
+    }
+
+    message FlashingBeacon {
+        reserved 1;
+        FlashingBeaconFunction function = 2;
+        optional bool is_flashing = 3;
+        optional string sign_text = 4;
+
+        enum FlashingBeaconFunction {
+            FLASHING_BEACON_FUNCTION_UNKNOWN = 0;
+            FLASHING_BEACON_FUNCTION_VEHICLE_ENTERING = 1;
+            FLASHING_BEACON_FUNCTION_QUEUE_WARNING = 2;
+            FLASHING_BEACON_FUNCTION_REDUCED_SPEED = 3;
+            FLASHING_BEACON_FUNCTION_WORKERS_PRESENT = 4;
+        }
+    }
+
+    message HybridSign {
+        reserved 1;
+        HybridSignDynamicMessageFunction dynamic_message_function = 2;
+        optional string dynamic_message_text = 3;
+        optional string static_sign_text = 4;
+
+        enum HybridSignDynamicMessageFunction {
+            HYBRID_SIGN_DYNAMIC_MESSAGE_FUNCTION_UNKNOWN = 0;
+            HYBRID_SIGN_DYNAMIC_MESSAGE_FUNCTION_SPEED_LIMIT = 1;
+            HYBRID_SIGN_DYNAMIC_MESSAGE_FUNCTION_TRAVEL_TIME = 2;
+            HYBRID_SIGN_DYNAMIC_MESSAGE_FUNCTION_OTHER = 3;
+        }
+    }
+
+    message LocationMarker {
+        reserved 1;
+    }
+
+    message TrafficSensor {
+        reserved 1;
+        google.protobuf.Timestamp collection_interval_start_date = 2;
+        google.protobuf.Timestamp collection_interval_end_date = 3;
+        optional double average_speed_kph = 4;
+        optional double volume_kph = 5;
+        optional double occupancy_percent = 6;
+        repeated TrafficSensorLaneData lane_data = 7;
+
+        message TrafficSensorLaneData {
+            uint32 lane_order = 1;
+            uint64 road_event_id = 2;
+            double average_speed_kph = 3;
+            double volume_kph = 4;
+            double occupancy_percent = 5;
+        }
+    }
+
+    message TrafficSignal {
+        reserved 1;
+        TrafficSignalMode mode = 2;
+
+        enum TrafficSignalMode {
+            TRAFFIC_SIGNAL_MODE_UNKNOWN = 0;
+            TRAFFIC_SIGNAL_MODE_BLANK = 1;
+            TRAFFIC_SIGNAL_MODE_FLASHING_RED = 2;
+            TRAFFIC_SIGNAL_MODE_FLASHING_YELLOW = 3;
+            TRAFFIC_SIGNAL_MODE_FULLY_ACTUATED = 4;
+            TRAFFIC_SIGNAL_MODE_MANUAL = 5;
+            TRAFFIC_SIGNAL_MODE_PRE_TIMED = 6;
+            TRAFFIC_SIGNAL_MODE_SEMI_ACTUATED = 7;
+        }
+    }
+    
+    message MobileVehicle {
+        VehicleOperationType operation_type = 1;
+        string license_plate = 2;
+        uint32 heading = 3; // in degrees
+    
+        enum VehicleOperationType {
+            VEHICLE_OPERATION_UNKNOWN = 0;
+            VEHICLE_OPERATION_STRIPING = 1;
+            VEHICLE_OPERATION_PLOWING = 2;
+            VEHICLE_OPERATION_MOWING = 3;
+            VEHICLE_OPERATION_GENERAL_ACTIVE = 4;
+            VEHICLE_OPERATION_GENERAL_INACTIVE = 5;
+        }
+    }
+    
+    message FieldWorker {
+        OperationType operation_type = 1;
+
+        enum OperationType {
+            OPERATION_TYPE_UNKNOWN = 0;
+            OPERATION_TYPE_FLAGGER = 1;
+            OPERATION_TYPE_WORKER = 2;
+            OPERATION_TYPE_MOBILE_IN_VEHICLE = 3;
+        }
+    }
+}

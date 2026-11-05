@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package datahub.v1;
+
+option java_package = "wyo.dot.protobuf";
+option java_outer_classname = "ProjectProto";
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+
+message Project {
+    uint64 id = 1;
+    string name = 2;
+    string description = 3;
+    ProjectActiveStatus active_status = 4;
+    google.protobuf.Timestamp creation_date = 5;
+    google.protobuf.Timestamp start_date = 6;
+    google.protobuf.Timestamp end_date = 7;
+
+    enum ProjectActiveStatus {
+        PROJECT_ACTIVE_STATUS_UNKNOWN = 0;
+        PROJECT_ACTIVE_STATUS_ACTIVE = 1;
+        PROJECT_ACTIVE_STATUS_SUSPENDED = 2;
+    }
+}

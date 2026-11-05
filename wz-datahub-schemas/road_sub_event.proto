@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package datahub.v1;
+
+option java_package = "wyo.dot.protobuf";
+option java_outer_classname = "RoadSubEventProto";
+option java_multiple_files = true;
+
+import "common.proto";
+import "wzdx.proto";
+import "road_event.proto";
+
+// RoadSubEvent Guidelines
+// - Geometry
+//   - While Point and Polygon geometries are supported, LineString is preferred
+
+message RoadSubEvent {
+    reserved 5,6,12,13,14,15,16,25,29,30;
+
+    uint64 id = 1;
+    // When managed from the Datahub, there may not be a project in ConAdmin to associate this RSE with
+    optional uint64 project_id = 2;
+    uint64 road_event_id = 3;
+    RoadwayDirection direction = 4;
+    // the human-readable names of the roadway(s) associated with the route_id
+    repeated string road_names = 7;
+    optional string beginning_cross_street = 8;
+    optional string ending_cross_street = 9;
+    double beginning_milepost = 10;
+    double ending_milepost = 11;
+    optional MarkedLocationType start_location_type = 17;
+    optional MarkedLocationType end_location_type = 18;
+    oneof Geometry {
+        PointGeometry point = 19;
+        LineStringGeometry line_string = 20;
+        PolygonGeometry polygon = 21;
+    }
+    optional BoundingBox bbox = 22;
+    // The route id from WYDOT's ESRI/GIS system. Ex: ML25B or ML2000B
+    // Without a route id, other WYDOT systems will not know how to determine which roadway the event relates to
+    // because there are cases where the same road name and milepost refer to different lat/longs.
+    string route_id = 23;
+    // If included, this road_sub_event has a different schedule than the default
+    // provided in the parent Road Event.
+    // Else, refer to the parent Road Event's default_schedule for the recurrence of this road sub event
+    optional EventRecurrence schedule = 24;
+
+    oneof Layer {
+        BaseLayer base_layer = 26;
+        SpeedReductionLayer speed_reduction_layer = 27;
+        WorkerPresenceLayer worker_presence_layer = 28;
+    }
+
+    enum RoadDirection {
+        ROAD_DIRECTION_UNKNOWN = 0;
+        ROAD_DIRECTION_BOTH = 1;
+        ROAD_DIRECTION_NORTHBOUND = 2;
+        ROAD_DIRECTION_SOUTHBOUND = 3;
+        ROAD_DIRECTION_EASTBOUND = 4;
+        ROAD_DIRECTION_WESTBOUND = 5;
+    }
+
+    // BaseLayer RoadSubEvent fields must cover the entire length of the RoadEvent
+    message BaseLayer {
+        VehicleImpact vehicle_impact = 1;
+        repeated Lane lanes = 2;
+        repeated Restriction restrictions = 3;
+        RoadSurfaceType surface_type = 4;
+    }
+
+    message SpeedReductionLayer {
+        float reduced_speed_limit_kph = 1;
+    }
+
+    message WorkerPresenceLayer {
+        WorkerPresence worker_presence = 1;
+    }
+}
