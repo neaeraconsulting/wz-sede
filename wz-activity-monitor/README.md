@@ -50,14 +50,7 @@ dart run build_runner build --delete-conflicting-outputs
 ```
 
 ### Generating Protobuf Files
-To re-generate protobuf classes from the wz-datahub-schemas submodule, do the following:
-
-1. Clone the wz-datahub-schemas submodule
-```sh
-git submodule update --init
-```
-
-2. Generate the protobuf classes
+To re-generate protobuf classes from the shared `wz-datahub-schemas` project (a sibling folder in this repo), run:
 ```sh
 ./generate_proto.sh
 ```

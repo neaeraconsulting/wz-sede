@@ -1,4 +1,5 @@
-# Stage 1: Build the application and submodule
+# Build context is the repository root (see wz-message-generator/docker-compose.yml)
+# Stage 1: Build the application and shared schemas
 FROM maven:3.9.4-eclipse-temurin-21 AS build
 
 # Install a specific version of protoc (Protobuf compiler)
@@ -11,11 +12,11 @@ RUN apt-get update && apt-get install -y wget unzip && \
 WORKDIR /app
 
 # Copy the Maven project files
-COPY pom.xml . 
-COPY ./wz-datahub-schemas ./wz-datahub-schemas
-COPY src ./src
+COPY wz-message-generator/message_generator/pom.xml .
+COPY wz-datahub-schemas ./wz-datahub-schemas
+COPY wz-message-generator/message_generator/src ./src
 
-# Build the wz-datahub-schemas submodule
+# Build the wz-datahub-schemas library
 RUN mvn -f wz-datahub-schemas/pom.xml clean install -DskipTests
 
 # Build the main application

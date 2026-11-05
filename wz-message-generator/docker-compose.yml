@@ -32,7 +32,8 @@ services:
       - deployment
       - all
     build:
-      context: ./message_generator
+      context: ..
+      dockerfile: wz-message-generator/message_generator/Dockerfile
     image: message_generator:latest
     restart: always
     ports:

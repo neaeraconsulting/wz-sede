@@ -17,13 +17,9 @@ This repository contains the following sub-projects:
 
 ## Installation
 
-1. Initialize git submodules
+1. Make a copy of the sample.env file and rename it to .env. Fill out the environment variables in the .env file. The .env file is used to set up the database connection and other environment variables for the application.
 
-```sh
-git submodule update --init
-```
-
-2. Make a copy of the .env.sample file and rename it to .env. Fill out the environment variables in the .env file. The .env file is used to set up the database connection and other environment variables for the application.
+Docker builds use the repository root as the build context so the shared `wz-datahub-schemas` project is available (`docker compose` handles this).
 
 ## Usage
 

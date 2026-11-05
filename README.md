@@ -8,7 +8,7 @@ Each project's README has its own run instructions. Between them, you will need:
 
 | Dependency | Version | Needed by |
 |---|---|---|
-| Git | any recent | all (some projects use submodules) |
+| Git | any recent | all |
 | Docker and Docker Compose | recent | wz-datahub, wz-message-generator (Kafka, MongoDB, PostgreSQL, Keycloak, and the services themselves) |
 | JDK | 21 | wz-datahub (`datahub`), wz-message-generator (`message_generator`), wz-datahub-schemas |
 | Apache Maven | 3.9+ (`mvnw` wrapper included in message_generator) | Java projects, wz-datahub-schemas |
@@ -25,7 +25,7 @@ Runtime infrastructure, normally started through the docker compose files:
 - **Keycloak** for authentication
 - **External access (not included):** an SDX API account for publishing WZDx/CWZ messages, plus ConAdmin and TMC data sources, which are WYDOT systems you must provide or mock
 
-Configuration: copy each project's `sample.env` to `.env` and fill in values. The `wz-datahub-schemas` projects must be available (via submodule or local `mvn install`) before building the projects that depend on them.
+Configuration: copy each project's `sample.env` to `.env` and fill in values. The `wz-datahub-schemas` project is a sibling folder; the Dockerfiles build it automatically, and for local Maven builds run `mvn install` in it first.
 
 ## Projects
 
